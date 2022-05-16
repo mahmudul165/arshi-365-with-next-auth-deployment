@@ -140,13 +140,14 @@ function Header() {
             </li>
 
             <li className="nav-item">
-              <a
-                href=""
-                className="nav-link   active    text-dark "
-                aria-current="page"
-              >
-                Today Deals
-              </a>
+              <Link href="/todayDeals">
+                <a
+                  className="nav-link   active    text-dark "
+                  aria-current="page"
+                >
+                  Today Deals
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a

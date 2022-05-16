@@ -22,9 +22,6 @@ function signUp() {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
-            {/* <div id="emailHelp" className="form-text">
-              never share your email with anyone else.
-            </div> */}
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">
@@ -56,9 +53,6 @@ function signUp() {
               I agree all statements in Terms of service
             </label>
           </div>
-          {/* <button type="submit" className="btn btn-primary">
-            Submit
-          </button> */}
           <button
             className="btn btn-lg rounded-pill p-2 px-3 my-4 "
             style={{
