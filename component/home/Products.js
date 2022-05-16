@@ -14,7 +14,7 @@ const Products = () => {
   console.log("testing data from apiAction", Products);
   return (
     <div className="container">
-      <h3 className="fs-1 fw-bolder  " style={{ color: "#ff8095" }}>
+      <h3 className="fs-1 fw-bolder pt-3" style={{ color: "#ff8095" }}>
         Top selected
       </h3>
       <div className="row    text-center my-2 py-2 ">
