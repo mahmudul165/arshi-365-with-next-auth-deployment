@@ -41,7 +41,7 @@ function Footer() {
             </div>
             <div>
               <a className="p-1  m-auto" href="#">
-                Copyright@Archi365
+                Copyright@Arshi365
               </a>
             </div>
           </div>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import Link from "next/link";
 function Header() {
   const Button = styled.button`
     background-color: #c1706f;
@@ -15,14 +16,16 @@ function Header() {
         <div className="container-fluid  ">
           {/* logo part  section*/}
           <div className="   ">
-            <a className="navbar-brand" href="">
-              <Image
-                src="/home/logo.png"
-                alt="ECOMMERCE  LOGO"
-                width={75}
-                height={75}
-              />
-            </a>
+            <Link href="/">
+              <a className="navbar-brand">
+                <Image
+                  src="/home/logo.png"
+                  alt="ECOMMERCE  LOGO"
+                  width={75}
+                  height={75}
+                />
+              </a>
+            </Link>
           </div>
           {/* search section */}
           <div className="w-50 d-flex justify-content-center align-items-center  responsive-search pe-4">
@@ -78,9 +81,9 @@ function Header() {
               height={20}
               className="d-inline-block align-text-top  "
             />
-            <a href="" className="ms-1   text-decoration-none text-dark">
-              LOGIN
-            </a>
+            <Link href="/login">
+              <a className="ms-1   text-decoration-none text-dark">LOGIN</a>
+            </Link>
           </div>
           {/* register  */}
           <div className="text-center d-flex   ms-1">
@@ -91,9 +94,9 @@ function Header() {
               height={20}
               className=" ms-1"
             />
-            <a href="" className="ms-1   text-decoration-none text-dark">
-              REGISTER
-            </a>
+            <Link href="/signup">
+              <a className="ms-1   text-decoration-none text-dark">REGISTER</a>
+            </Link>
           </div>
         </div>
       </nav>
