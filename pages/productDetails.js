@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import IncrementDecrement from "../component/IncrementDecrement";
 import StarRating from "../component/StarRating";
-
+import Link from "next/link";
 function productDetails() {
   return (
     <div
@@ -59,16 +59,18 @@ function productDetails() {
             >
               ADD TO CART
             </button>
-            <button
-              className="col btn btn-sm  rounded-pill  ms-2 p-2"
-              style={{
-                backgroundColor: "white",
-                color: "#ff8095",
-                border: 0,
-              }}
-            >
-              BUY NOW
-            </button>
+            <Link href="/payment">
+              <button
+                className="col btn btn-sm  rounded-pill  ms-2 p-2"
+                style={{
+                  backgroundColor: "white",
+                  color: "#ff8095",
+                  border: 0,
+                }}
+              >
+                BUY NOW
+              </button>
+            </Link>
           </div>
         </div>
       </div>
