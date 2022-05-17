@@ -16,7 +16,11 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = ["Shipping", "Payment", "Completed"];
+  const FormTitles = [
+    "Delivery Information",
+    "Payment",
+    "Select Payment Method",
+  ];
 
   const PageDisplay = () => {
     if (page === 0) {
