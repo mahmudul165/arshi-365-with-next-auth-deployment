@@ -19,7 +19,7 @@ function IncrementDecrement() {
     <>
       {/* increment decrement */}
       <div
-        className="btn-group my-2 py-1 mb-4  w-25"
+        className="btn-group my-1 py-1    w-25"
         role="group"
         aria-label="Basic outlined example"
       >

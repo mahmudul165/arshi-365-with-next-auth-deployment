@@ -10,7 +10,7 @@ function productDetails() {
   justify-content-center my-3"
       style={{ backgroundColor: "#F2EBDD" }}
     >
-      <div className="col-md-6  p-3">
+      <div className="col-md-6 p-3">
         <Image
           src="/images/sign up.png"
           alt="icon-register"
@@ -19,7 +19,7 @@ function productDetails() {
           className=" ms-1"
         />
       </div>
-      <div className="col-md-6  p-3 ">
+      <div className="col-md-6 p-3">
         <h1 className="py-2 my-2 fs-1 fw-bolder " style={{ color: "#ff8095" }}>
           Moslin Salor Kamiz
         </h1>
@@ -47,27 +47,29 @@ function productDetails() {
         <p> Earn 5 Club Points</p>
         {/* increment decrement */}
         <IncrementDecrement />
-        <div className="row w-50">
-          <button
-            className="col btn btn-sm  rounded-pill "
-            style={{
-              backgroundColor: "white",
-              color: "#ff8095",
-              border: 0,
-            }}
-          >
-            ADD TO CART
-          </button>
-          <button
-            className="col btn btn-sm  rounded-pill  ms-2"
-            style={{
-              backgroundColor: "white",
-              color: "#ff8095",
-              border: 0,
-            }}
-          >
-            BUY NOW
-          </button>
+        <div>
+          <div className="my-2  btn-group btn-group-sm" role="group">
+            <button
+              className="col btn btn-sm  rounded-pill p-2"
+              style={{
+                backgroundColor: "white",
+                color: "#ff8095",
+                border: 0,
+              }}
+            >
+              ADD TO CART
+            </button>
+            <button
+              className="col btn btn-sm  rounded-pill  ms-2 p-2"
+              style={{
+                backgroundColor: "white",
+                color: "#ff8095",
+                border: 0,
+              }}
+            >
+              BUY NOW
+            </button>
+          </div>
         </div>
       </div>
     </div>
