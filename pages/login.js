@@ -67,7 +67,7 @@ function signUp() {
       </div>
       <div className="col-md-6 order-1 order-lg-1">
         <Image
-          src="/images/signIn.png"
+          src="/home/sign-in.png"
           alt="icon-register"
           width={434}
           height={475}
