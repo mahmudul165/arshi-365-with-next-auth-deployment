@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import SignUp from "/home/sign-up.png";
+import SignUp from "/public/home/Sign-up.png";
 function login() {
   return (
     <div
