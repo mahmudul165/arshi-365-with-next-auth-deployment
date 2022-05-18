@@ -16,7 +16,7 @@ const Product = ({ product }) => {
   });
   return (
     <>
-      <Link href="/productDetails">
+      <Link href={`products/${_id}`}>
         <div className="col-sm-12 col-md-4 p-2  ">
           <div className="card border-0 " style={{ width: "22rem" }}>
             <Image
@@ -37,16 +37,6 @@ const Product = ({ product }) => {
               >
                 ৳{price}
               </p>
-              {/* <button
-              className="btn rounded-pill p-2 px-3"
-              style={{
-                backgroundColor: "#FFDDDE",
-                color: "#ff8095",
-                border: 0,
-              }}
-            >
-              BUY NOW
-            </button> */}
             </div>
           </div>
         </div>

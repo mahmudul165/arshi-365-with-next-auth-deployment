@@ -40,7 +40,7 @@ function Header() {
               />
               <div className="input-group-append">
                 <Button
-                  className="input-group-text"
+                  className=" "
                   type="submit"
                   style={{
                     backgroundColor: "#c1706f",

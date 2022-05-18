@@ -6,11 +6,17 @@ import OtherInfo from "./OtherInfo";
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    address: "",
+    devision: "",
+    city: "",
+    area: "",
+    country: "",
+    phone: "",
     email: "",
     password: "",
     confirmPassword: "",
-    firstName: "",
-    lastName: "",
     username: "",
     nationality: "",
     other: "",
@@ -33,82 +39,110 @@ function Form() {
   };
 
   return (
-    <div className="form container">
-      <div className="progressbar">
+    <div className=" ">
+      {" "}
+      <div className="form container   ">
+        {/* <div className="progress">
+      <div
+        className="progress-bar progress-bar-striped bg-warning"
+        style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
+      ></div>
+    </div> */}
+        {/* test */}
         <div
-          style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
-        ></div>
-      </div>
-      <div className="form-container">
-        <div className="header">
-          {/* <h1>{FormTitles[page]}</h1> */}
-          <h1 className="p-2 fs-1 fw-bolder  " style={{ color: "#ff8095" }}>
-            {FormTitles[page]}
-          </h1>
+          className="progress rounded-pill mt-5 mb-3"
+          style={{ height: "5px" }}
+        >
+          <div
+            className="progress-bar  "
+            role="progressbar"
+            style={{ width: page === 0 && "33.3%", backgroundColor: "#6a1b9a" }}
+          ></div>
+          <div
+            className="progress-bar  "
+            role="progressbar"
+            style={{ width: page === 1 && "66.6%", backgroundColor: "#6a1b9a" }}
+          ></div>
+          <div
+            className="progress-bar  "
+            role="progressbar"
+            style={{ width: page === 2 && "100%", backgroundColor: "#6a1b9a" }}
+          ></div>
         </div>
-        <div className="body">{PageDisplay()}</div>
-        {/* <div className="footer mt-5 btn btn-group">
-          <button
-            className="btn btn-warning rounded"
-            disabled={page == 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            className="ms-4 btn btn-warning  rounded"
-            onClick={() => {
-              if (page === FormTitles.length - 1) {
-                alert("FORM SUBMITTED");
-                console.log(formData);
-              } else {
-                setPage((currPage) => currPage + 1);
-              }
-            }}
-          >
-            {page === FormTitles.length - 1 ? "Submit" : "Next"}
-          </button>
-        </div> */}
-        {/* test  */}
-        <div>
-          <div className="my-4  btn-group btn-group-lg" role="group">
-            <button
-              className="col btn    rounded-pill px-4"
-              style={{
-                backgroundColor: "white",
-                color: "#ff8095",
-                border: 0,
-              }}
-              disabled={page == 0}
-              onClick={() => {
-                setPage((currPage) => currPage - 1);
-              }}
+        <div className="form-container w-75 m-auto">
+          <div className="header">
+            {/* <h1>{FormTitles[page]}</h1> */}
+            <h6
+              className="p-2  mb-2 fs-4 fw-bolder  "
+              style={{ color: "#ff8095" }}
             >
-              Prev
-            </button>
-            <button
-              className="col btn   rounded-pill  ms-2 px-4"
-              style={{
-                backgroundColor: "white",
-                color: "#ff8095",
-                border: 0,
-              }}
-              onClick={() => {
-                if (page === FormTitles.length - 1) {
-                  alert("FORM SUBMITTED");
-                  console.log(formData);
-                } else {
-                  setPage((currPage) => currPage + 1);
-                }
-              }}
-            >
-              {page === FormTitles.length - 1 ? "Submit" : "Next"}
-            </button>
+              {FormTitles[page]}
+            </h6>
           </div>
+          <div className="body card p-3 border-0  ">{PageDisplay()}</div>
+          {/* <div className="footer mt-5 btn btn-group">
+        <button
+          className="btn btn-warning rounded"
+          disabled={page == 0}
+          onClick={() => {
+            setPage((currPage) => currPage - 1);
+          }}
+        >
+          Prev
+        </button>
+        <button
+          className="ms-4 btn btn-warning  rounded"
+          onClick={() => {
+            if (page === FormTitles.length - 1) {
+              alert("FORM SUBMITTED");
+              console.log(formData);
+            } else {
+              setPage((currPage) => currPage + 1);
+            }
+          }}
+        >
+          {page === FormTitles.length - 1 ? "Submit" : "Next"}
+        </button>
+      </div> */}
+          {/* test  */}
+          <div>
+            <div className="my-4  btn-group btn-group-lg" role="group">
+              <button
+                className="col btn    rounded-pill px-4"
+                style={{
+                  backgroundColor: "white",
+                  color: "#ff8095",
+                  border: 0,
+                }}
+                disabled={page == 0}
+                onClick={() => {
+                  setPage((currPage) => currPage - 1);
+                }}
+              >
+                Prev
+              </button>
+              <button
+                className="col btn   rounded-pill  ms-2 px-4"
+                style={{
+                  backgroundColor: "white",
+                  color: "#ff8095",
+                  border: 0,
+                }}
+                onClick={() => {
+                  if (page === FormTitles.length - 1) {
+                    alert("FORM SUBMITTED");
+                    console.log(formData);
+                  } else {
+                    setPage((currPage) => currPage + 1);
+                  }
+                }}
+              >
+                {page === FormTitles.length - 1 ? "Submit" : "Next"}
+              </button>
+            </div>
+          </div>
+          {/* tst end */}
         </div>
-        {/* tst end */}
       </div>
     </div>
   );

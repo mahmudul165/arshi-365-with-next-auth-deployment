@@ -8,10 +8,13 @@ function PersonalInfo({ formData, setFormData }) {
           Email address
         </label>
         <input
-          type="email"
+          type="text"
           className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
+          placeholder="Email..."
+          value={formData.email}
+          onChange={(event) =>
+            setFormData({ ...formData, email: event.target.value })
+          }
         />
       </div>
       <div className="mb-3">
@@ -19,13 +22,17 @@ function PersonalInfo({ formData, setFormData }) {
           Password
         </label>
         <input
-          type="password"
+          type="text"
           className="form-control"
-          id="exampleInputPassword1"
+          placeholder="Password..."
+          value={formData.password}
+          onChange={(event) =>
+            setFormData({ ...formData, password: event.target.value })
+          }
         />
       </div>
 
-      <input
+      {/* <input
         type="text"
         placeholder="First Name..."
         value={formData.firstName}
@@ -48,7 +55,7 @@ function PersonalInfo({ formData, setFormData }) {
         onChange={(e) => {
           setFormData({ ...formData, username: e.target.value });
         }}
-      />
+      /> */}
     </div>
   );
 }
