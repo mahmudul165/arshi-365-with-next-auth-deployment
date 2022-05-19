@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import StarRating from "../../component/StarRating";
 import IncrementDecrement from "../../component/IncrementDecrement";
-
+import SignIn from "/public/home/Sign-in.png";
 const BlogDetails = () => {
   const [details, setDetails] = useState([]);
   const router = useRouter();
@@ -17,8 +17,9 @@ const BlogDetails = () => {
       .then((data) => setDetails(data));
   }, []);
 
-  console.log("details is", details);
+  //console.log("details is", details);
   const { _id, name, price, description, img } = details;
+  console.log("img", details.img);
   return (
     <div
       className="container   row m-auto align-items-center 
@@ -26,9 +27,18 @@ justify-content-center my-3"
       style={{ backgroundColor: "#F2EBDD" }}
     >
       <div className="col-md-6 p-3">
+        {/* {`products/${product._id}`} */}
+        {/* <Image
+          src={`${details.img}`}
+          alt="product-img"
+          width={434}
+          height={475}
+          className=" ms-1"
+        /> */}
+        {/* test */}
         <Image
-          src="/images/sign up.png"
-          alt="icon-register"
+          src={SignIn}
+          alt="product-img"
           width={434}
           height={475}
           className=" ms-1"

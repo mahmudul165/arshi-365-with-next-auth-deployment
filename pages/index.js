@@ -1,13 +1,13 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Meta from "../component/seo/Meta";
-import Slider from "../component/home/Slider";
 import Showcase from "../component/home/Showcase";
 import ExploreMore from "../component/home/ExploreMore";
 import Products from "../component/home/Products";
 import Footer from "../component/layout/Footer";
 import Product from "../component/home/Product";
 import Services from "../component/home/Products";
+import SliderHome from "../component/home/Slider";
 
 function Home() {
   return (
@@ -19,7 +19,7 @@ function Home() {
         image="test purpose"
       />
       <div className="container">
-        <Slider />
+        <SliderHome />
         <Showcase />
         <ExploreMore />
         <Products />

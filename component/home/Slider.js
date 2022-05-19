@@ -1,6 +1,59 @@
 import React from "react";
 import Image from "next/image";
-function Slider() {
+import Slider from "react-slick";
+function SliderHome() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
+  };
+  const photos = [
+    {
+      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      width: 4,
+      height: 3,
+    },
+    {
+      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      width: 4,
+      height: 3,
+    },
+  ];
   return (
     <section className="container   " style={{ backgroundColor: "#FFDDDE" }}>
       <div className="row g-2 align-items-center   pt-2 pb-3 ">
@@ -49,27 +102,25 @@ function Slider() {
                 data-bs-ride="carousel"
               >
                 <div className="carousel-inner  ">
-                  <div
-                    className="carousel-item active  "
-                    data-bs-interval="500"
-                  >
-                    <Image
-                      src="/home/slider1.png"
-                      alt="new arrrival product"
-                      width={492}
-                      height={562}
-                      className="d-block w-100"
-                    />
-                  </div>
-                  <div className="carousel-item" data-bs-interval="500">
-                    <Image
-                      src="/home/slider2.png"
-                      alt="new arrrival product"
-                      width={492}
-                      height={562}
-                      className="d-block w-100"
-                    />
-                  </div>
+                  <Slider {...settings}>
+                    {photos.map((photo) => (
+                      <>
+                        <div
+                          className="carousel-item active  "
+                          data-bs-interval="500"
+                          key={photo.src}
+                        >
+                          <img
+                            src={photo.src}
+                            alt="new arrrival product"
+                            width={492}
+                            height={562}
+                            className="d-block w-100"
+                          />
+                        </div>
+                      </>
+                    ))}
+                  </Slider>
                 </div>
                 <button
                   className="carousel-control-prev"
@@ -104,4 +155,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default SliderHome;

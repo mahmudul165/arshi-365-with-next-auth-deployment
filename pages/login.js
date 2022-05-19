@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SignIn from "/public/home/Sign-in.png";
 function signUp() {
   return (
     <div
@@ -67,7 +68,7 @@ function signUp() {
       </div>
       <div className="col-md-6 order-1 order-lg-1">
         <Image
-          src="/home/sign-in.png"
+          src={SignIn}
           alt="icon-register"
           width={434}
           height={475}
