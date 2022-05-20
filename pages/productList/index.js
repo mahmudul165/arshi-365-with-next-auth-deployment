@@ -50,7 +50,7 @@ const Products = () => {
       </h3> */}
       <div className="row    text-center my-2 py-2 ">
         {Products.map((product) => (
-          <Link key={product.id} href={`products/${product.id}`}>
+          <Link key={product.id} href={`productList/${product.id}`}>
             <div className="col-sm-12 col-md-4 p-2  ">
               <div className="card border-0 " style={{ width: "22rem" }}>
                 {/* <Image

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
@@ -8,10 +8,33 @@ function Header() {
   const Button = styled.button`
     background-color: #c1706f;
   `;
+
+  // navbar top
+  const [show, setShow] = useState(true);
+  const controlNavbar = () => {
+    if (window.scrollY > 100) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
   return (
-    <header>
+    <header
+      className={`container sticky-top  header-bg    ${
+        !show && " shadow-lg  rounded bg-light  nav-scroll"
+      }`}
+    >
       {/* <!-- navbar --> */}
-      <nav className="container navbar navbar-expand-lg pb-0">
+      <nav
+        className="container navbar navbar-expand-lg pb-0"
+        id="navbar-scroll"
+      >
         {/* web view */}
         <div className="container-fluid  ">
           {/* logo part  section*/}

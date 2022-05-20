@@ -5,7 +5,7 @@ function signUp() {
   return (
     <div
       className="container   row m-auto align-items-center 
-      justify-content-center"
+      justify-content-center  "
       style={{ backgroundColor: "#F2EBDD" }}
     >
       <div className="col-md-6 order-2 order-lg-1">

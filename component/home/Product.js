@@ -7,7 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 const Product = ({ product }) => {
   // const {product} = props;
-  const { _id, name, price, description, img } = product;
+  const { name, price, short_description, long_description, image_one } =
+    product;
   // animation
   const styles = useSpring({
     loop: { reverse: true },
@@ -16,7 +17,7 @@ const Product = ({ product }) => {
   });
   return (
     <>
-      <Link href={`products/${_id}`}>
+      <Link href={`productList/${product.id}`}>
         <div className="col-sm-12 col-md-4 p-2  ">
           <div className="card border-0 " style={{ width: "22rem" }}>
             <Image

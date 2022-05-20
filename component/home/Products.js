@@ -6,7 +6,7 @@ const Products = () => {
   const [Products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://intense-caverns-52774.herokuapp.com/packages")
+    fetch("https://arshi365.lamptechs.com/api/admin/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -19,7 +19,7 @@ const Products = () => {
       </h3>
       <div className="row    text-center my-2 py-2 ">
         {Products.map((product) => (
-          <Product key={product._id} product={product}></Product>
+          <Product key={product.id} product={product}></Product>
         ))}
       </div>
     </div>
