@@ -6,9 +6,9 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <div className="mt-5 text-white" style={{ backgroundColor: "#FFDDDE" }}>
+    <div className="mt-5 text-white " style={{ backgroundColor: "#FFDDDE" }}>
       <div className="">
-        <div className="row gx-4 mt-5 p-3">
+        <div className="row gx-4 mt-5 p-3 ">
           <div className="col-md-2 d-flex justify-content-center align-items-center ">
             {/* logo part  section*/}
             <a className="navbar-brand" href="">

@@ -38,7 +38,10 @@ a {
 .header-bg {
   background-color: #fef3ea;
 }
-
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
 /*  responsive for mobile devices  */
 @media only screen and (max-width: 688px) {
   .responsive-search {

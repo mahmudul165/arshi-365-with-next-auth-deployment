@@ -30,7 +30,10 @@ function Showcase() {
       className="container mt-5 text-white"
       style={{ backgroundColor: "#F2EBDD" }}
     >
-      <div className="row gx-4 mt-5 justify-content-center align-items-center  ">
+      <div
+        className="row gx-4 mt-5 justify-content-center align-items-center "
+        style={{ marginLeft: -15, marginRight: -15 }}
+      >
         <div className="col-md-6   my-2 p-2">
           {/* image gallery*/}
           <div className="d-flex flex-column  p-2 m-2  ">

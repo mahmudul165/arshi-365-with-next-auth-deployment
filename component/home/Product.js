@@ -19,7 +19,7 @@ const Product = ({ product }) => {
     <>
       <Link href={`productList/${product.id}`}>
         <div className="col-sm-12 col-md-4 p-2  ">
-          <div className="card border-0 " style={{ width: "22rem" }}>
+          <div className="card border-0 ">
             <Image
               src="/images/jacket-1.png"
               alt="E-COMMERCE  products"
