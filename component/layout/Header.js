@@ -26,7 +26,7 @@ function Header() {
   }, []);
   return (
     <header
-      className={`container sticky-top  header-bg    ${
+      className={`  sticky-top  header-bg    ${
         !show && " shadow-lg  rounded bg-light  nav-scroll"
       }`}
     >
