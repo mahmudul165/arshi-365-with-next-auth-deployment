@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useCart } from "react-use-cart";
 function Header() {
   const Button = styled.button`
     background-color: #c1706f;
@@ -24,6 +25,17 @@ function Header() {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
+  // cart item
+  const {
+    isEmpty,
+    totalUniqueItems,
+    items,
+    totalItems,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+  } = useCart();
   return (
     <header
       className={`  sticky-top  header-bg    ${
@@ -90,8 +102,8 @@ function Header() {
               height={52}
               className="d-inline-block align-text-top  "
             />
-            <a href="" className="ms-1  text-decoration-none text-dark">
-              MY CART
+            <a href="/cart" className="ms-1  text-decoration-none text-dark">
+              MY CART ({totalItems})
             </a>
           </div>
           {/*authentication section */}

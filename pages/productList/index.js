@@ -18,23 +18,12 @@ import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Image from "next/image";
 import Link from "next/link";
-// const blobToImage = (blob) => {
-//   return new Promise((resolve) => {
-//     const url = URL.createObjectURL(blob);
-//     let Img = new Image();
-//     Img.onload = () => {
-//       URL.revokeObjectURL(url);
-//       resolve(img);
-//     };
-//     Img.src = url;
-//     console.log("first", Img.src);
-//   });
-// };
+import { useCart } from "react-use-cart";
 
 const Products = () => {
+  const { addItem } = useCart();
   // store fetch data
   const [Products, setProducts] = useState([]);
-
   useEffect(() => {
     fetch("https://arshi365.lamptechs.com/api/admin/products")
       .then((res) => res.json())

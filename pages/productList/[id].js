@@ -5,7 +5,12 @@ import Link from "next/link";
 import StarRating from "../../component/StarRating";
 import IncrementDecrement from "../../component/IncrementDecrement";
 import SignIn from "/public/home/Sign-in.png";
+
+// test code
+import { useCart } from "react-use-cart";
 const ProductDetails = () => {
+  const { addItem } = useCart();
+
   const [details, setDetails] = useState([]);
   const router = useRouter();
   const { id } = router.query;
@@ -25,6 +30,7 @@ const ProductDetails = () => {
   const { name, price, short_description, long_description, image_one } =
     details;
   console.log("img", details.img);
+
   return (
     <div
       className="container   row m-auto align-items-center 
@@ -54,13 +60,12 @@ justify-content-center my-3"
           {name}
         </h1>
         <p>{long_description}</p>
-        <div className="text-warning">
-          {/*  star */}
+        {/* review section */}
+        {/* <div className="text-warning">
           <StarRating />
-          {/* review */}
           <small> 1 Review</small>
           <small className="ms-2">| Add your Review</small>
-        </div>
+        </div> */}
         <p
           className="fs-5 fw-bolder mt-2 "
           style={{
@@ -72,10 +77,11 @@ justify-content-center my-3"
         </p>
         <p> Earn 5 Club Points</p>
         {/* increment decrement */}
-        <IncrementDecrement />
+        {/* <IncrementDecrement /> */}
         <div>
           <div className="my-2  btn-group btn-group-sm" role="group">
             <button
+              onClick={() => addItem(details)}
               className="col btn btn-sm  rounded-pill p-2"
               style={{
                 backgroundColor: "white",

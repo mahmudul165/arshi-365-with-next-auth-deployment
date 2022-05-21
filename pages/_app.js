@@ -5,6 +5,7 @@ import Layout from "../component/layout/Layout";
 import Meta from "../component/seo/Meta";
 import Header from "../component/layout/Header";
 import Footer from "../component/layout/Footer";
+import { CartProvider } from "react-use-cart";
 
 function MyApp({ Component, pageProps }) {
   //const getLayout = Component.getLayout || ((page) => page);
@@ -29,10 +30,11 @@ function MyApp({ Component, pageProps }) {
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossOrigin="anonymous"
       />
-
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <CartProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </CartProvider>
     </>
   );
 }

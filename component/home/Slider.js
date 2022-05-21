@@ -87,21 +87,19 @@ function SliderHome() {
                 <div className="carousel-inner  ">
                   <Slider {...settings}>
                     {photos.map((photo) => (
-                      <>
-                        <div
-                          className="carousel-item active  "
-                          data-bs-interval="500"
-                          key={photo.src}
-                        >
-                          <img
-                            src={photo.src}
-                            alt="new arrrival product"
-                            width={492}
-                            height={562}
-                            className="d-block w-100"
-                          />
-                        </div>
-                      </>
+                      <div
+                        className="carousel-item active  "
+                        data-bs-interval="500"
+                        key={photo.src}
+                      >
+                        <img
+                          src={photo.src}
+                          alt="new arrrival product"
+                          width={492}
+                          height={562}
+                          className="d-block w-100"
+                        />
+                      </div>
                     ))}
                   </Slider>
                 </div>
