@@ -18,7 +18,7 @@ const ProductDetails = () => {
     fetch(`https://arshi365.lamptechs.com/api/admin/products/${id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
-  }, []);
+  }, [details]);
 
   //console.log("details is", details);
 
