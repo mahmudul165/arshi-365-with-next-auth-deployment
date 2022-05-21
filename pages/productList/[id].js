@@ -9,10 +9,10 @@ const ProductDetails = () => {
   const [details, setDetails] = useState([]);
   const router = useRouter();
   const { id } = router.query;
-  console.log(
-    "pid is ",
-    `https://arshi365.lamptechs.com/api/admin/products/${id}`
-  );
+  // console.log(
+  //   "pid is ",
+  //   `https://arshi365.lamptechs.com/api/admin/products/${id}`
+  // );
 
   useEffect(() => {
     fetch(`https://arshi365.lamptechs.com/api/admin/products/${id}`)

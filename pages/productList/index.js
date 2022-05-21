@@ -62,7 +62,14 @@ const Products = () => {
                   /> */}
                 {/* egheherher */}
 
-                <img
+                {/* <img
+                  src={`data:image/jpeg;base64,${product.image_one}`}
+                  alt="E-COMMERCE  products"
+                  className="card-img-top  p-2  "
+                  width={336}
+                  height={336}
+                /> */}
+                <Image
                   src={`data:image/jpeg;base64,${product.image_one}`}
                   alt="E-COMMERCE  products"
                   className="card-img-top  p-2  "

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Products from "../component/home/Products";
+import Image from "next/image";
+import ExploreImage from "/home/exploreMore-image.png";
 function todayDeals() {
   // const Button = styled.button`
   //   background-color: white;
@@ -39,11 +41,19 @@ function todayDeals() {
             <div className="py-2">
               {/* explore more image*/}
               <a className="navbar-brand" href="">
-                <img
+                {/* <img
                   style={{ width: 200, height: 160 }}
                   className="logo  "
                   src="/home/exploreMore-image.png"
                   alt=""
+                /> */}
+
+                <Image
+                  src={ExploreImage}
+                  alt=" "
+                  className="logo  "
+                  width={200}
+                  height={180}
                 />
               </a>
             </div>
