@@ -86,7 +86,7 @@ justify-content-center my-3"
               ADD TO CART
             </button>
             {/*href={`products/${_id}'/payment'`}*/}
-            <Link href="/payment">
+            <Link href="/payment" passHref>
               <button
                 className="col btn btn-sm  rounded-pill  ms-2 p-2"
                 style={{
