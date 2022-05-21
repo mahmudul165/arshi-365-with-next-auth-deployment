@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Products from "../component/home/Products";
 import Image from "next/image";
-import ExploreImage from "/home/exploreMore-image.png";
+import ExploreImage from "/public/home/exploreMore-image.png";
 function todayDeals() {
   // const Button = styled.button`
   //   background-color: white;
