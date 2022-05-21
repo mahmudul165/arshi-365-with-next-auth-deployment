@@ -3,6 +3,7 @@ import Image from "next/image";
 import IncrementDecrement from "../component/IncrementDecrement";
 import StarRating from "../component/StarRating";
 import Link from "next/link";
+import SignUp from "/public/home/Sign-up.png";
 function productDetails() {
   return (
     <div
@@ -12,7 +13,7 @@ function productDetails() {
     >
       <div className="col-md-6 p-3">
         <Image
-          src="/images/sign up.png"
+          src={SignUp}
           alt="icon-register"
           width={434}
           height={475}
@@ -59,7 +60,7 @@ function productDetails() {
             >
               ADD TO CART
             </button>
-            <Link href="/payment">
+            <Link href="/payment" passHref>
               <button
                 className="col btn btn-sm  rounded-pill  ms-2 p-2"
                 style={{

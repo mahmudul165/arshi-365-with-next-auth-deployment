@@ -43,7 +43,6 @@ function SliderHome() {
       <div className="row g-2 align-items-center   pt-2 pb-3 ">
         <div className="col-sm-12 col-md-6    p-4 ">
           <div className="p-2">
-            {" "}
             <div className=" h-100    border-light border-5  ">
               <h1
                 className="text-color   fw-bolder "

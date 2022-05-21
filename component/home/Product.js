@@ -5,6 +5,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import Image from "next/image";
 import Link from "next/link";
+import Singleproduct from "/public/images/jacket-1.png";
 const Product = ({ product }) => {
   // const {product} = props;
   const { name, price, short_description, long_description, image_one } =
@@ -17,11 +18,11 @@ const Product = ({ product }) => {
   });
   return (
     <>
-      <Link href={`productList/${product.id}`}>
+      <Link href={`productList/${product.id}`} passHref>
         <div className="col-sm-12 col-md-4 p-2  ">
           <div className="card border-0 ">
             <Image
-              src="/images/jacket-1.png"
+              src={Singleproduct}
               alt="E-COMMERCE  products"
               className="card-img-top  p-2  "
               width={336}
