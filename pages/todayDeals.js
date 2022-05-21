@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import Products from "../component/home/Products";
 import Image from "next/image";
 import ExploreImage from "/public/home/exploreMore-image.png";

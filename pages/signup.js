@@ -1,11 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import SignUp from "/public/home/Sign-up.png";
+
+import { useSession, signIn, signOut } from "next-auth/react";
 function login() {
+  //const { data: session } = useSession();
+  // console.log(useSession());
+  // const handleSignIn = (platfrom) => {
+  //   event.preventDefault();
+  //   value === "influencer" || value === "brand"
+  //     ? signIn(platfrom)
+  //     : alert("An example warning alert with an icon ");
+  // };
   return (
     <div
       className="container   row m-auto align-items-center 
-      justify-content-center"
+      justify-content-center mt-4"
       style={{ backgroundColor: "#F2EBDD" }}
     >
       <div className="col-md-6 order-2 order-lg-1">
@@ -81,6 +91,47 @@ function login() {
           className=" ms-1"
         />
       </div>
+      {/* example */}
+      {/* <>
+<div className="d-flex justify-content-center mx-4   me-2">
+  {!session ? (
+    <>
+      <button
+        type="button"
+        className="btn btn-primary btn-lg me-5 "
+        onClick={() => signIn()}
+      >
+        Google
+      </button>
+    </>
+  ) : (
+    <>
+      <div className="text-center">
+        <h3 className="mt-5">
+          {session.user?.email || session.user?.name}
+        </h3>
+        <button
+          type="button"
+          className="btn btn-primary btn-lg me-5 "
+          onClick={() => signOut()}
+        >
+          signOut
+        </button>
+      </div>
+    </>
+  )}
+</div>
+</> */}
+
+      <>
+        <button
+          type="button"
+          className="btn btn-primary btn-lg me-5 "
+          onClick={() => signIn("google")}
+        >
+          Google
+        </button>
+      </>
     </div>
   );
 }

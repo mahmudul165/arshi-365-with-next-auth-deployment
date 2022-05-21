@@ -1,3 +1,4 @@
+import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
 import Head from "next/head";
 import Script from "next/script";
@@ -7,7 +8,7 @@ import Header from "../component/layout/Header";
 import Footer from "../component/layout/Footer";
 import { CartProvider } from "react-use-cart";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   //const getLayout = Component.getLayout || ((page) => page);
   //console.log("page is",getLayout)
   if (Component.getLayout) {
@@ -30,11 +31,13 @@ function MyApp({ Component, pageProps }) {
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossOrigin="anonymous"
       />
-      <CartProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </CartProvider>
+      <SessionProvider session={session}>
+        <CartProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </CartProvider>
+      </SessionProvider>
     </>
   );
 }

@@ -46,6 +46,13 @@ justify-content-center my-3"
           height={475}
           className=" ms-1"
         /> */}
+        {/* <img
+          src={`${details.img}`}
+          alt="product-img"
+          width={434}
+          height={475}
+          className=" ms-1"
+        /> */}
         {/* test */}
         <Image
           src={SignIn}
