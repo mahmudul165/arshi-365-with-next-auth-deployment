@@ -3,6 +3,7 @@ import React from "react";
 import Products from "../component/home/Products";
 import Image from "next/image";
 import ExploreImage from "/public/home/exploreMore-image.png";
+import ProductList from "./productList";
 function todayDeals() {
   // const Button = styled.button`
   //   background-color: white;
@@ -61,7 +62,8 @@ function todayDeals() {
         </div>
       </div>
       {/* product */}
-      <Products />
+      {/* <Products /> */}
+      <ProductList />
     </>
   );
 }

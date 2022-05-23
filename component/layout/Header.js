@@ -117,7 +117,7 @@ function Header() {
             // <li>{session.user?.email}</li>
             // start
             <>
-              <div className="nav-item dropdown fs-6  fw-bolder">
+              <div className="nav-item dropdown fs-6 ">
                 <a
                   className="nav-link active dropdown-toggle"
                   href="#"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
 import StarRating from "../../component/StarRating";
@@ -9,110 +10,107 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Router from "next/router";
 // test code
 import { useCart } from "react-use-cart";
-import { route } from "next/dist/server/router";
+
 const ProductDetails = () => {
   const { addItem } = useCart();
-
-  const [details, setDetails] = useState([]);
   const router = useRouter();
-  console.log("route", router);
   const { id } = router.query;
-  // console.log(
-  //   "pid is ",
-  //   `https://arshi365.lamptechs.com/api/admin/products/${id}`
-  // );
-
-  useEffect(() => {
-    fetch(`https://arshi365.lamptechs.com/api/admin/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setDetails(data));
-  }, [details]);
-
-  //console.log("details is", details);
-
-  const { name, price, short_description, long_description, image_one } =
-    details;
-  console.log("img", details.img);
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error } = useSWR(
+    `https://arshi365.lamptechs.com/api/admin/products/${id}`,
+    fetcher
+  );
+  console.log("my object data is", data);
   const { data: session } = useSession();
   const BuyNow = () => {
     session ? router.push("/payment") : router.push("/signup");
   };
+
   return (
     <div
       className="container   row m-auto align-items-center 
 justify-content-center my-3"
       style={{ backgroundColor: "#F2EBDD" }}
     >
-      <div className="col-md-6 p-3">
-        <img
-          src={image_one}
-          alt="product-img"
-          width={434}
-          height={475}
-          className=" ms-1"
-        />
-        {/* test */}
-        {/* <Image
+      {data ? (
+        <>
+          <div className="col-md-6 p-3">
+            <img
+              src={data.image_one}
+              alt="product-img"
+              width={434}
+              height={475}
+              className=" ms-1"
+            />
+            {/* test */}
+            {/* <Image
           src={SignIn}
           alt="product-img"
           width={434}
           height={475}
           className=" ms-1"
         /> */}
-      </div>
-      <div className="col-md-6 p-3">
-        <h1 className="py-2 my-2 fs-1 fw-bolder " style={{ color: "#ff8095" }}>
-          {name}
-        </h1>
-        <p>{long_description}</p>
-        {/* review section */}
-        {/* <div className="text-warning">
+          </div>
+          <div className="col-md-6 p-3">
+            <h1
+              className="py-2 my-2 fs-1 fw-bolder "
+              style={{ color: "#ff8095" }}
+            >
+              {data.name}
+            </h1>
+            <p>{data.long_description}</p>
+            {/* review section */}
+            {/* <div className="text-warning">
           <StarRating />
           <small> 1 Review</small>
           <small className="ms-2">| Add your Review</small>
         </div> */}
-        <p
-          className="fs-5 fw-bolder mt-2 "
-          style={{
-            color: "#ff8095",
-            border: 0,
-          }}
-        >
-          ৳ {price}
-        </p>
-        <p> Earn 5 Club Points</p>
-        {/* increment decrement */}
-        {/* <IncrementDecrement /> */}
-        <div>
-          <div className="my-2  btn-group btn-group-sm" role="group">
-            <button
-              onClick={() => addItem(details)}
-              className="col btn btn-sm  rounded-pill p-2"
+            <p
+              className="fs-5 fw-bolder mt-2 "
               style={{
-                backgroundColor: "white",
                 color: "#ff8095",
                 border: 0,
               }}
             >
-              ADD TO CART
-            </button>
-            {/*href={`products/${_id}'/payment'`}*/}
-            {/* <Link href="/payment" passHref> */}
-            <button
-              onClick={BuyNow}
-              className="col btn btn-sm  rounded-pill  ms-2 p-2"
-              style={{
-                backgroundColor: "white",
-                color: "#ff8095",
-                border: 0,
-              }}
-            >
-              BUY NOW
-            </button>
-            {/* </Link> */}
+              ৳ {data.price}
+            </p>
+            <p> Earn 5 Club Points</p>
+            {/* increment decrement */}
+            {/* <IncrementDecrement /> */}
+            <div>
+              <div className="my-2  btn-group btn-group-sm" role="group">
+                <button
+                  onClick={() => addItem(data)}
+                  className="col btn btn-sm  rounded-pill p-2"
+                  style={{
+                    backgroundColor: "white",
+                    color: "#ff8095",
+                    border: 0,
+                  }}
+                >
+                  ADD TO CART
+                </button>
+                {/*href={`products/${_id}'/payment'`}*/}
+                {/* <Link href="/payment" passHref> */}
+                <button
+                  onClick={BuyNow}
+                  className="col btn btn-sm  rounded-pill  ms-2 p-2"
+                  style={{
+                    backgroundColor: "white",
+                    color: "#ff8095",
+                    border: 0,
+                  }}
+                >
+                  BUY NOW
+                </button>
+                {/* </Link> */}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <h1>loading.....</h1>
+      )}
     </div>
   );
 };

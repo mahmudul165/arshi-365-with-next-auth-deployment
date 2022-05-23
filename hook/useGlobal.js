@@ -10,13 +10,9 @@ const useGlobal = () => {
   const BuyNow = () => {
     session ? router.push("/payment") : router.push("/signup");
   };
+  // products list
 
-  return {
-    session,
-    signInUsingGoogle,
-    logOut,
-    BuyNow,
-  };
+  return { session, signInUsingGoogle, logOut, BuyNow };
 };
 
 export default useGlobal;
