@@ -121,19 +121,19 @@ justify-content-center my-3"
             />
           </div>
           <div className="col p-3">
-            <div className="  p-3 my-1">
+            <div className="  p-3  ">
               <Skeleton height={50} />
             </div>
-            <div className="  p-3 my-1">
+            <div className="  p-3  ">
               <Skeleton height={200} />
             </div>
-            <div className="  p-3 my-1">
+            <div className="  p-3  ">
               <Skeleton height={40} />
             </div>
-            <div className="  p-3 my-1">
-              <Skeleton height={20} />
+            <div className="  p-3 ">
+              <Skeleton height={30} />
             </div>
-            <div className="  p-3 my-1">
+            <div className="  p-3  ">
               <Skeleton height={50} />
             </div>
           </div>
