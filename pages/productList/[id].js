@@ -11,7 +11,8 @@ import Router from "next/router";
 // test code
 import { useCart } from "react-use-cart";
 import axios from "axios";
-
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const ProductDetails = () => {
   const { addItem } = useCart();
   const router = useRouter();
@@ -37,7 +38,7 @@ justify-content-center my-3"
         <>
           <div className="col-md-6 p-3">
             <img
-              src={data.image_one}
+              src={data.image_one || <Skeleton />}
               alt="product-img"
               width={434}
               height={475}
@@ -57,7 +58,7 @@ justify-content-center my-3"
               className="py-2 my-2 fs-1 fw-bolder "
               style={{ color: "#ff8095" }}
             >
-              {data.name}
+              {data.name || <Skeleton />}
             </h1>
             <p>{data.long_description}</p>
             {/* review section */}
@@ -73,7 +74,7 @@ justify-content-center my-3"
                 border: 0,
               }}
             >
-              ৳ {data.price}
+              ৳ {data.price || <Skeleton />}
             </p>
             <p> Earn 5 Club Points</p>
             {/* increment decrement */}
@@ -110,7 +111,33 @@ justify-content-center my-3"
           </div>
         </>
       ) : (
-        <h1>loading.....</h1>
+        <div className="row gx-4 p-2  ">
+          <div className="col p-3">
+            <Skeleton
+              borderRadius={10}
+              height={500}
+              width={400}
+              highlightColor={"white"}
+            />
+          </div>
+          <div className="col p-3">
+            <div className="  p-3 my-1">
+              <Skeleton height={50} />
+            </div>
+            <div className="  p-3 my-1">
+              <Skeleton height={200} />
+            </div>
+            <div className="  p-3 my-1">
+              <Skeleton height={40} />
+            </div>
+            <div className="  p-3 my-1">
+              <Skeleton height={20} />
+            </div>
+            <div className="  p-3 my-1">
+              <Skeleton height={50} />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

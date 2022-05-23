@@ -25,7 +25,8 @@ const Products = () => {
   const { addItem } = useCart();
   const { data, error } = useSWR(
     "https://arshi365.lamptechs.com/api/admin/products",
-    { fetcher: async (url) => await fetch(url).then((res) => res.json()) }
+    // { fetcher: async (url) => await fetch(url).then((res) => res.json()) }
+    { fetcher: async (url) => await axios.get(url).then((res) => res.data) }
   );
 
   return (
