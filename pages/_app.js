@@ -7,6 +7,7 @@ import Meta from "../component/seo/Meta";
 import Header from "../component/layout/Header";
 import Footer from "../component/layout/Footer";
 import { CartProvider } from "react-use-cart";
+import AuthProvider from "../contexts/AuthProvider";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   //const getLayout = Component.getLayout || ((page) => page);
@@ -31,12 +32,15 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossOrigin="anonymous"
       />
+
       <SessionProvider session={session}>
-        <CartProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </CartProvider>
+        </AuthProvider>
       </SessionProvider>
     </>
   );

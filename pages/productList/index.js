@@ -60,9 +60,11 @@ const Products = () => {
                 /> */}
                 {/* arshi365.lamptechs.com/public/upload/1653134779.png */}
                 <img
-                  src={`https://arshi365.lamptechs.com/public/upload/${product.image_one}`}
+                  src={product.image_one}
                   alt="E-COMMERCE  products"
                   className="card-img-top  p-2  "
+                  width={434}
+                  height={475}
                 />
                 {/* <Image
                   src={`data:image/jpeg;base64,${product.image_one}`}

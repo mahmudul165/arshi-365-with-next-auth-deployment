@@ -1,17 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import SignUp from "/public/home/Sign-up.png";
-
 import { useSession, signIn, signOut } from "next-auth/react";
+import { Router, useRouter } from "next/router";
+import { redirect } from "next/dist/server/api-utils";
+
 function login() {
+  const router = useRouter();
+  console.log("route find", router);
   const { data: session } = useSession();
-  // console.log(useSession());
-  // const handleSignIn = (platfrom) => {
-  //   event.preventDefault();
-  //   value === "influencer" || value === "brand"
-  //     ? signIn(platfrom)
-  //     : alert("An example warning alert with an icon ");
-  // };
+  // console.log("data", useSession());
+  const handleSignin = () => {
+    console.log("session is", session);
+    session ? router.push("/") : signIn("google");
+  };
+
   return (
     <div className="container my-3 py-3" style={{ backgroundColor: "#F2EBDD" }}>
       <div
@@ -108,7 +111,7 @@ function login() {
                   color: "#ff8095",
                   border: 0,
                 }}
-                onClick={() => signIn("google")}
+                onClick={handleSignin}
               >
                 Google
               </button>
@@ -121,13 +124,13 @@ function login() {
           ) : (
             <>
               <div className="text-center">
-                <h3 className="mt-5">
+                {/* <h3 className="mt-5">
                   {session.user?.email || session.user?.name}
-                </h3>
+                </h3> */}
                 <button
                   type="button"
                   className="btn btn-primary btn-lg me-5 "
-                  onClick={() => signOut()}
+                  onClick={signOut}
                 >
                   signOut
                 </button>

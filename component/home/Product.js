@@ -16,13 +16,14 @@ const Product = ({ product }) => {
     from: { x: 0 },
     to: { x: 2 },
   });
+
   return (
     <>
       <Link href={`productList/${product.id}`} passHref>
         <div className="col-sm-12 col-md-4 p-2  ">
           <div className="card border-0 ">
-            <Image
-              src={Singleproduct}
+            <img
+              src={image_one}
               alt="E-COMMERCE  products"
               className="card-img-top  p-2  "
               width={336}

@@ -5,14 +5,17 @@ import Link from "next/link";
 import StarRating from "../../component/StarRating";
 import IncrementDecrement from "../../component/IncrementDecrement";
 import SignIn from "/public/home/Sign-in.png";
-
+import { useSession, signIn, signOut } from "next-auth/react";
+import Router from "next/router";
 // test code
 import { useCart } from "react-use-cart";
+import { route } from "next/dist/server/router";
 const ProductDetails = () => {
   const { addItem } = useCart();
 
   const [details, setDetails] = useState([]);
   const router = useRouter();
+  console.log("route", router);
   const { id } = router.query;
   // console.log(
   //   "pid is ",
@@ -30,7 +33,10 @@ const ProductDetails = () => {
   const { name, price, short_description, long_description, image_one } =
     details;
   console.log("img", details.img);
-
+  const { data: session } = useSession();
+  const BuyNow = () => {
+    session ? router.push("/payment") : router.push("/signup");
+  };
   return (
     <div
       className="container   row m-auto align-items-center 
@@ -38,29 +44,21 @@ justify-content-center my-3"
       style={{ backgroundColor: "#F2EBDD" }}
     >
       <div className="col-md-6 p-3">
-        {/* {`products/${product._id}`} */}
-        {/* <Image
-          src={`${details.img}`}
-          alt="product-img"
-          width={434}
-          height={475}
-          className=" ms-1"
-        /> */}
-        {/* <img
-          src={`${details.img}`}
-          alt="product-img"
-          width={434}
-          height={475}
-          className=" ms-1"
-        /> */}
-        {/* test */}
-        <Image
-          src={SignIn}
+        <img
+          src={image_one}
           alt="product-img"
           width={434}
           height={475}
           className=" ms-1"
         />
+        {/* test */}
+        {/* <Image
+          src={SignIn}
+          alt="product-img"
+          width={434}
+          height={475}
+          className=" ms-1"
+        /> */}
       </div>
       <div className="col-md-6 p-3">
         <h1 className="py-2 my-2 fs-1 fw-bolder " style={{ color: "#ff8095" }}>
@@ -99,18 +97,19 @@ justify-content-center my-3"
               ADD TO CART
             </button>
             {/*href={`products/${_id}'/payment'`}*/}
-            <Link href="/payment" passHref>
-              <button
-                className="col btn btn-sm  rounded-pill  ms-2 p-2"
-                style={{
-                  backgroundColor: "white",
-                  color: "#ff8095",
-                  border: 0,
-                }}
-              >
-                BUY NOW
-              </button>
-            </Link>
+            {/* <Link href="/payment" passHref> */}
+            <button
+              onClick={BuyNow}
+              className="col btn btn-sm  rounded-pill  ms-2 p-2"
+              style={{
+                backgroundColor: "white",
+                color: "#ff8095",
+                border: 0,
+              }}
+            >
+              BUY NOW
+            </button>
+            {/* </Link> */}
           </div>
         </div>
       </div>

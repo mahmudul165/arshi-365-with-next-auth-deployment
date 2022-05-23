@@ -1,7 +1,9 @@
 import React from "react";
 import { useCart } from "react-use-cart";
+import useAuth from "../hook/useAuth";
 
 const Cart = () => {
+  const { BuyNow } = useAuth();
   const {
     isEmpty,
     totalUniqueItems,
@@ -88,8 +90,8 @@ const Cart = () => {
           <button onClick={() => emptyCart()} className="btn btn-danger ms-2">
             Clear Cart
           </button>
-          <button onClick={buy} className="btn btn-primary ms-2">
-            Buy Now{" "}
+          <button onClick={BuyNow} className="btn btn-primary ms-2">
+            Buy Now
           </button>
         </div>
       </div>

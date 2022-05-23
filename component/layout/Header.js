@@ -5,7 +5,9 @@ import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "react-use-cart";
+import { useSession, signIn, signOut } from "next-auth/react";
 function Header() {
+  const { data: session } = useSession();
   const Button = styled.button`
     background-color: #c1706f;
   `;
@@ -102,13 +104,140 @@ function Header() {
               height={52}
               className="d-inline-block align-text-top  "
             />
-            <a href="/cart" className="ms-1  text-decoration-none text-dark">
-              MY CART ({totalItems})
-            </a>
+            <Link href="/cart" passHref>
+              <a className="ms-1  text-decoration-none text-dark">
+                MY CART ({totalItems})
+              </a>
+            </Link>
           </div>
           {/*authentication section */}
           {/* login  */}
-          <div className=" d-flex  ">
+          {/* start */}
+          {session ? (
+            // <li>{session.user?.email}</li>
+            // start
+            <>
+              <div className="nav-item dropdown fs-6  fw-bolder">
+                <a
+                  className="nav-link active dropdown-toggle"
+                  href="#"
+                  id="creatorsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src={session.user?.image}
+                    width="25px"
+                    height="25px"
+                    className="rounded-circle"
+                    alt="Picture of the author"
+                  />
+                </a>
+
+                <ul
+                  className="dropdown-menu    nav-style "
+                  aria-labelledby="creatorsDropdown"
+                  style={{ marginLeft: "-127px" }}
+                >
+                  <li>
+                    <a className="fs-6  fw-bolder dropdown-item  " href="#">
+                      Manage My Account
+                    </a>
+                    <Link href="/brand/dashboard">
+                      <a className="fs-6  fw-bolder dropdown-item">My Orders</a>
+                    </Link>
+                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      My Reviews
+                    </a>
+
+                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      My Returns & cancellation
+                    </a>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    {/* <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      Become a Seller
+                    </a>
+                    <Link href="/brand/settings">
+                      <a className="fs-6  fw-bolder dropdown-item">Settings</a>
+                    </Link>
+
+                    <Link href="/brand/channel">
+                      <a className="fs-6  fw-bolder dropdown-item">Channel</a>
+                    </Link>
+                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      Billing NEW
+                    </a>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li> */}
+                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      English
+                    </a>
+                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      $ USD
+                    </a>
+                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                      Help & support
+                    </a>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <a
+                      className="fs-6  fw-bolder dropdown-item"
+                      href="#"
+                      onClick={signOut}
+                    >
+                      Logout
+                    </a>
+                  </li>
+
+                  {/* <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      <li>
+                        <a className="fs-6  fw-bolder dropdown-item" href="#">
+                          WORK
+                        </a>
+                      </li> */}
+                </ul>
+              </div>
+            </>
+          ) : (
+            // end
+            <>
+              <div className="d-flex">
+                <Image
+                  src="/home/icon-login.png"
+                  alt="Picture of the author"
+                  width={20}
+                  height={20}
+                  className="d-inline-block align-text-top  "
+                />
+                <Link href="/login">
+                  <a className="ms-1   text-decoration-none text-dark">LOGIN</a>
+                </Link>
+              </div>
+              <div className="text-center d-flex   ms-1">
+                <Image
+                  src="/home/icon-register.png"
+                  alt="icon-register"
+                  width={20}
+                  height={20}
+                  className=" ms-1"
+                />
+                <Link href="/signup">
+                  <a className="ms-1   text-decoration-none text-dark">
+                    REGISTER
+                  </a>
+                </Link>
+              </div>
+            </>
+          )}
+          {/* end */}
+          {/* <div className=" d-flex  ">
             <Image
               src="/home/icon-login.png"
               alt="Picture of the author"
@@ -119,9 +248,9 @@ function Header() {
             <Link href="/login">
               <a className="ms-1   text-decoration-none text-dark">LOGIN</a>
             </Link>
-          </div>
+          </div> */}
           {/* register  */}
-          <div className="text-center d-flex   ms-1">
+          {/* <div className="text-center d-flex   ms-1">
             <Image
               src="/home/icon-register.png"
               alt="icon-register"
@@ -132,7 +261,7 @@ function Header() {
             <Link href="/signup">
               <a className="ms-1   text-decoration-none text-dark">REGISTER</a>
             </Link>
-          </div>
+          </div> */}
         </div>
       </nav>
       {/* 2nd navbar */}
