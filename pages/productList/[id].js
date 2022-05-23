@@ -10,15 +10,16 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Router from "next/router";
 // test code
 import { useCart } from "react-use-cart";
+import axios from "axios";
 
 const ProductDetails = () => {
   const { addItem } = useCart();
   const router = useRouter();
   const { id } = router.query;
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
   const { data, error } = useSWR(
     `https://arshi365.lamptechs.com/api/admin/products/${id}`,
-    fetcher
+    { fetcher: async (url) => await axios.get(url).then((res) => res.data) }
   );
   console.log("my object data is", data);
   const { data: session } = useSession();

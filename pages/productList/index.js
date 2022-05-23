@@ -19,12 +19,13 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 import { useCart } from "react-use-cart";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import axios, { Axios } from "axios";
+
 const Products = () => {
   const { addItem } = useCart();
   const { data, error } = useSWR(
     "https://arshi365.lamptechs.com/api/admin/products",
-    fetcher
+    { fetcher: async (url) => await fetch(url).then((res) => res.json()) }
   );
 
   return (
