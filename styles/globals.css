@@ -91,11 +91,10 @@ GOOGLE_SECRET: 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, */
 .big-img img {
   width: 100%;
   height: 100%;
-  max-height: 400px;
+  max-height: 550px;
   display: block;
   object-fit: cover;
 }
-
 .details .box {
   max-width: 500px;
   min-width: 290px;
@@ -168,14 +167,14 @@ GOOGLE_SECRET: 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, */
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */

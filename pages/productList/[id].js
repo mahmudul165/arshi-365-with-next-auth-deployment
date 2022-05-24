@@ -37,10 +37,7 @@ const ProductDetails = () => {
   const { items, updateItemQuantity } = useCart();
   console.log(" items array is", items);
   return (
-    <div
-      className="container  align-items-center 
-    justify-content-center m-auto "
-    >
+    <div className="container details">
       <div
         className="container   row m-auto align-items-center 
 justify-content-center m-3 p-2 gx-0  "
@@ -48,18 +45,11 @@ justify-content-center m-3 p-2 gx-0  "
       >
         {data ? (
           <>
-            <div
-              className="col-md-6    card  border-0 h-25"
-              style={{ backgroundClor: "#f1eadc" }}
-            >
+            <div className="col-md-6 big-img">
               {Object.keys(imageSlider).length === 0 ? (
-                <img
-                  src={data.image_one}
-                  alt="product-img"
-                  className="  h-25  "
-                />
+                <img src={data.image_one} alt="product-img" />
               ) : (
-                <img src={imageSlider} alt="product-img" className="  h-25  " />
+                <img src={imageSlider} alt="product-img" />
               )}
 
               {/* test */}
@@ -70,6 +60,10 @@ justify-content-center m-3 p-2 gx-0  "
        height={475}
        className=" ms-1"
      /> */}
+            </div>
+            <div className="col-md-6 box">
+              <h2 className="py-2 my-2  text-uppercase">{data.name}</h2>
+              {/* slider img */}
               <div className="row py-2 my-2">
                 <img
                   onClick={() => handleImage(event.target.src)}
@@ -87,14 +81,6 @@ justify-content-center m-3 p-2 gx-0  "
                   className="col p-2 thumb"
                 ></img>
               </div>
-            </div>
-            <div className="col-md-6 p-2">
-              <h2
-                className="py-2 my-2 fs-1 fw-bolder "
-                style={{ color: "#ff8095" }}
-              >
-                {data.name}
-              </h2>
               {/* review section */}
               <div className=" my-2 py-1    ">
                 <StarRating />
@@ -157,7 +143,7 @@ justify-content-center m-3 p-2 gx-0  "
             <div className="col p-3">
               <Skeleton
                 borderRadius={10}
-                height={500}
+                height={550}
                 width={400}
                 highlightColor={"white"}
               />

@@ -12,7 +12,11 @@ function login() {
   // console.log("data", useSession());
   const handleSignin = () => {
     console.log("session is", session);
-    session ? router.push("/") : signIn("google");
+    session ? (
+      <button onClick={() => router.push("/")}></button>
+    ) : (
+      signIn("google")
+    );
   };
 
   return (
@@ -115,6 +119,7 @@ function login() {
               >
                 Google
               </button>
+
               {/* env: {
     GOOGLEID:
       "15718943464-1f137o9melpvo03mevc1orf2j2gg7j1a.apps.googleusercontent.com",

@@ -173,12 +173,12 @@ function Header() {
                     <li>
                       <hr className="dropdown-divider" />
                     </li> */}
-                    <a className="fs-6  fw-bolder dropdown-item" href="#">
+                    {/* <a className="fs-6  fw-bolder dropdown-item" href="#">
                       English
                     </a>
                     <a className="fs-6  fw-bolder dropdown-item" href="#">
                       $ USD
-                    </a>
+                    </a> */}
                     <a className="fs-6  fw-bolder dropdown-item" href="#">
                       Help & support
                     </a>
