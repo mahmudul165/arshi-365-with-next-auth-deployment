@@ -5,8 +5,6 @@ import Showcase from "../component/home/Showcase";
 import ExploreMore from "../component/home/ExploreMore";
 import Products from "../component/home/Products";
 import Footer from "../component/layout/Footer";
-import Product from "../component/home/Product";
-import Services from "../component/home/Products";
 import SliderHome from "../component/home/Slider";
 import ProductDetails from "./productList/[id]";
 
@@ -24,8 +22,6 @@ function Home() {
         <Showcase />
         <ExploreMore />
         <Products />
-        {/* <Product /> */}
-        {/* <Services /> */}
       </div>
     </>
   );

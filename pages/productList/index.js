@@ -20,6 +20,7 @@ import Link from "next/link";
 import useSWR from "swr";
 import { useCart } from "react-use-cart";
 import axios, { Axios } from "axios";
+import Skeleton from "react-loading-skeleton";
 
 const Products = () => {
   const { addItem } = useCart();
@@ -58,7 +59,7 @@ const Products = () => {
                 /> */}
                   {/* arshi365.lamptechs.com/public/upload/1653134779.png */}
                   <img
-                    src={product.image_one}
+                    src={product.image_two}
                     alt="E-COMMERCE  products"
                     className="card-img-top  p-2  "
                     width={434}
@@ -90,7 +91,17 @@ const Products = () => {
             </Link>
           ))
         ) : (
-          <h1>loading.....</h1>
+          <div className="row    text-center my-2 py-2 ">
+            <div className="col-sm-12 col-md-4 p-2  ">
+              <Skeleton height={300} />
+            </div>
+            <div className="col-sm-12 col-md-4 p-2  ">
+              <Skeleton height={300} />
+            </div>
+            <div className="col-sm-12 col-md-4 p-2  ">
+              <Skeleton height={300} />
+            </div>
+          </div>
         )}
       </div>
     </div>
