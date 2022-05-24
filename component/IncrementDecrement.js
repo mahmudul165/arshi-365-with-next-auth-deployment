@@ -1,50 +1,31 @@
 import React from "react";
-import { useState } from "react";
+import { useCart } from "react-use-cart";
+
 function IncrementDecrement() {
-  let [num, setNum] = useState(0);
-  let incNum = () => {
-    if (num < 10) {
-      setNum(Number(num) + 1);
-    }
-  };
-  let decNum = () => {
-    if (num > 0) {
-      setNum(num - 1);
-    }
-  };
-  let handleChange = (e) => {
-    setNum(e.target.value);
-  };
+  const { items, updateItemQuantity } = useCart();
+  const result = items.filter((item) => item.id == Data.id);
+  console.log(" items array is", items);
   return (
-    <>
-      {/* increment decrement */}
-      <div
-        className="btn-group my-1 py-1    w-25"
-        role="group"
-        aria-label="Basic outlined example"
-      >
-        <button
-          type="button"
-          className="btn  btn-outline-warning"
-          onClick={decNum}
-        >
-          -
-        </button>
-        <input
-          type="text"
-          className="w-50  form-control"
-          value={num}
-          onChange={handleChange}
-        />
-        <button
-          type="button"
-          className="btn btn-outline-warning"
-          onClick={incNum}
-        >
-          +
-        </button>
-      </div>
-    </>
+    <div>
+      {result.map((item, index) => (
+        <tr key={index}>
+          <td>
+            <button
+              onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+              className="btn btn-sm btn-info ms-1"
+            >
+              -
+            </button>
+            <button
+              onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+              className="btn  btn-sm btn-info ms-1"
+            >
+              +
+            </button>
+          </td>
+        </tr>
+      ))}
+    </div>
   );
 }
 

@@ -7,15 +7,17 @@ import StarRating from "../../component/StarRating";
 import IncrementDecrement from "../../component/IncrementDecrement";
 import SignIn from "/public/home/Sign-in.png";
 import { useSession, signIn, signOut } from "next-auth/react";
-import Router from "next/router";
-// test code
-import { useCart } from "react-use-cart";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import useAuth from "../../hook/useAuth";
+import { useCart } from "react-use-cart";
+
 const ProductDetails = () => {
-  const [imageSlider, setImage] = useState({});
   const { addItem } = useCart();
+  const { BuyNow } = useAuth();
+  const [imageSlider, setImage] = useState({});
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -23,16 +25,17 @@ const ProductDetails = () => {
     `https://arshi365.lamptechs.com/api/admin/products/${id}`,
     { fetcher: async (url) => await axios.get(url).then((res) => res.data) }
   );
+
   console.log("my object data is", data);
   const { data: session } = useSession();
-  const BuyNow = () => {
-    session ? router.push("/payment") : router.push("/signup");
-  };
+
   const handleImage = (img) => {
     console.log("img first", img);
     setImage(img);
   };
   //console.log("img first", handleImage);
+  const { items, updateItemQuantity } = useCart();
+  console.log(" items array is", items);
   return (
     <div
       className="container  align-items-center 

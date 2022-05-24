@@ -1,8 +1,10 @@
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import { useCart } from "react-use-cart";
 import useAuth from "../hook/useAuth";
 
 const Cart = () => {
+  const [Cupon, setCupon] = useState({});
   const { BuyNow } = useAuth();
   const {
     isEmpty,
@@ -17,9 +19,16 @@ const Cart = () => {
   const buy = () => {
     alert("upcoming ");
   };
-  if (isEmpty) return <h1 className="text-center"> Your cart isEmpty </h1>;
+  if (isEmpty)
+    return (
+      <div className="container card my-5 py-5 fs-1 border-0 bg-light rounded">
+        <h1 className="container card my-5 py-5 text-center fs-1 fs-bolder border-0 shadow-lg">
+          Your cart is Empty
+        </h1>
+      </div>
+    );
   return (
-    <section className="container my-4 card  ">
+    <section className="container my-4 card     border-0  rounded">
       <div className="row jistufy-content-center align-items-center  m-auto  ">
         <div className="col-lg-7 col-sm-12 py-2 my-2">
           <h5 className="mb-4">
@@ -84,23 +93,30 @@ const Cart = () => {
         </div>
         <div className="col-lg-5 col-sm-12 ">
           <h5 className="mt-4 card border-0">Summary</h5>
+          <form>
+            <div className="form-group">
+              <label>Have coupon?</label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control coupon"
+                  name=""
+                  placeholder="Apply Coupon code"
+                  onChange={(event) => setCupon(event.target.value)}
+                />
+                {/* <span className="input-group-append">
+                  <button className="btn btn-primary btn-apply coupon">
+                    Apply
+                  </button>
+                </span> */}
+              </div>
+            </div>
+          </form>
           <table className="table  ">
-            {/* <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead> */}
             <tbody>
               <tr>
-                <th scope="row">Apply discount code</th>
-                <td>Mark</td>
-              </tr>
-              <tr>
                 <th scope="row">Subtotal</th>
-                <td>Mark</td>
+                <td>{cartTotal - parseInt(Cupon)} ৳</td>
               </tr>
               <tr
                 className="fs-5 fw-bolder mt-2 "
@@ -114,6 +130,13 @@ const Cart = () => {
               </tr>
             </tbody>
           </table>
+
+          <button
+            className="btn btn-lg btn-outline-primary m-auto"
+            onClick={BuyNow}
+          >
+            GO TO CHECKOUT
+          </button>
         </div>
       </div>
     </section>
