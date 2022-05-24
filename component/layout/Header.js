@@ -229,9 +229,7 @@ function Header() {
                   className=" ms-1"
                 />
                 <Link href="/signup">
-                  <a className="ms-1   text-decoration-none text-dark">
-                    REGISTER
-                  </a>
+                  <a className="text-decoration-none text-dark">REGISTER</a>
                 </Link>
               </div>
             </>
