@@ -4,19 +4,25 @@ import SignUp from "/public/home/Sign-up.png";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Router, useRouter } from "next/router";
 import { redirect } from "next/dist/server/api-utils";
+import useAuth from "../hook/useAuth";
 
 function login() {
+  const { BuyNow, path } = useAuth();
   const router = useRouter();
-  console.log("route find", router);
+  console.log("route from", path);
+  console.log("route current", router.asPath);
   const { data: session } = useSession();
   // console.log("data", useSession());
-  const handleSignin = () => {
-    console.log("session is", session);
-    session ? (
-      <button onClick={() => router.push("/")}></button>
-    ) : (
-      signIn("google")
-    );
+  const handleSignin = async () => {
+    // session ? redirect("/payment") : await router.push("/signup");
+    //path !== router.asPath ? router.push(router.asPath) : router.push("/");
+    if (!session) {
+      await signIn("google");
+    } else {
+      (await router.pathname) !== router.asPath
+        ? router.push(router.asPath)
+        : router.push("/");
+    }
   };
 
   return (
