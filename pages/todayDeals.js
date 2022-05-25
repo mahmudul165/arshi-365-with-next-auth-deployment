@@ -19,7 +19,7 @@ function todayDeals() {
         className="container mt-5 text-white"
         style={{ backgroundColor: "#F2EBDD" }}
       >
-        <div className="row gx-4 mt-5  ">
+        <div className="  row gx-4 mt-5  p-3">
           <div className="col-md-7 d-flex justify-content-center align-items-center ">
             {/* explore more image*/}
             <div className="d-flex flex-column p-1 text-center">
@@ -38,30 +38,37 @@ function todayDeals() {
               </button> */}
             </div>
           </div>
-          <div className="d-flex flex-column col-md-5  justify-content-center align-items-center m-auto p-2">
-            <div className="py-2">
-              {/* explore more image*/}
-              <a className="navbar-brand" href="">
-                {/* <img
-                  style={{ width: 200, height: 160 }}
-                  className="logo  "
-                  src="/home/exploreMore-image.png"
-                  alt=""
-                /> */}
+          <div className="d-flex flex-column col-md-5  justify-content-center align-items-center m-auto  ">
+            {/* explore more image*/}
+            <a className="navbar-brand" href="">
+              <img
+                style={{ width: 200, height: 160 }}
+                className="logo "
+                src={"/videos/lifestyleslider.gif"}
+                alt=""
+              />
 
-                <Image
+              {/* <Image
                   src={ExploreImage}
                   alt=" "
                   className="logo  "
                   width={200}
                   height={180}
-                />
-              </a>
-            </div>
+                /> */}
+              {/* <video
+                  width=" 200px"
+                  height="160px"
+                  borderRadius="5px"
+                  autoPlay
+                  muted
+                  src={"/videos/lifestyleslider.gif"}
+                /> */}
+            </a>
           </div>
         </div>
       </div>
       {/* product */}
+
       {/* <Products /> */}
       <ProductList />
     </>

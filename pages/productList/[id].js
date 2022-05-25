@@ -62,25 +62,26 @@ justify-content-center m-3 p-2 gx-0  "
      /> */}
             </div>
             <div className="col-md-6 box">
-              <h2 className="py-2 my-2  text-uppercase">{data.name}</h2>
               {/* slider img */}
               <div className="row py-2 my-2">
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_one}
-                  className="col p-2 thumb"
+                  className="col   thumb"
                 ></img>
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_two}
-                  className="col p-2 thumb"
+                  className="col   thumb "
                 ></img>
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_three}
-                  className="col p-2 thumb"
+                  className="col  thumb "
                 ></img>
               </div>
+              <h2 className="py-2 my-2  text-uppercase">{data.name}</h2>
+
               {/* review section */}
               <div className=" my-2 py-1    ">
                 <StarRating />

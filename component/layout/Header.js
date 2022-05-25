@@ -45,10 +45,7 @@ function Header() {
       }`}
     >
       {/* <!-- navbar --> */}
-      <nav
-        className="container navbar navbar-expand-lg pb-0"
-        id="navbar-scroll"
-      >
+      <nav className="container navbar navbar-expand-lg p-0" id="navbar-scroll">
         {/* web view */}
         <div className="container-fluid  ">
           {/* logo part  section*/}

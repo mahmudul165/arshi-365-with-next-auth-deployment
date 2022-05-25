@@ -31,50 +31,27 @@ const Products = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container my-4" style={{ backgroundColor: "#ffddde" }}>
       {/* <h3 className="fs-1 fw-bolder pt-3" style={{ color: "#ff8095" }}>
         Top selected
       </h3> */}
+
       <div className="row    text-center my-2 py-2 ">
         {data ? (
           data.map((product) => (
-            <Link key={product.id} href={`productList/${product.id}`} passHref>
-              <div className="col-sm-12 col-md-4 p-2  ">
-                <div className="card border-0 " style={{ width: "22rem" }}>
-                  {/* <Image
-                    src="/images/jacket-1.png"
+            <div key={product.id} className="col-sm-12 col-md-4 p-2  my-4 ">
+              <Link href={`productList/${product.id}`} passHref>
+                <div className="card border-0 p-2">
+                  <img
+                    src={product.image_one}
                     alt="E-COMMERCE  products"
                     className="card-img-top  p-2  "
                     width={336}
                     height={336}
-                  /> */}
-                  {/* egheherher */}
-
-                  {/* <img
-                  src={`data:image/jpeg;base64,${product.image_one}`}
-                  alt="E-COMMERCE  products"
-                  className="card-img-top  p-2  "
-                  width={336}
-                  height={336}
-                /> */}
-                  {/* arshi365.lamptechs.com/public/upload/1653134779.png */}
-                  <img
-                    src={product.image_two}
-                    alt="E-COMMERCE  products"
-                    className="card-img-top  p-2  "
-                    width={434}
-                    height={475}
                   />
-                  {/* <Image
-                  src={`data:image/jpeg;base64,${product.image_one}`}
-                  alt="E-COMMERCE  products"
-                  className="card-img-top  p-2  "
-                  width={336}
-                  height={336}
-                /> */}
                   <div className="card-body">
                     <h6 className="card-title fs-6 fw-bolder">
-                      {product.short_description}
+                      {product.name}
                     </h6>
                     <p
                       className="text-center fs-5 fw-bolder "
@@ -87,8 +64,8 @@ const Products = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))
         ) : (
           <div className="row    text-center my-2 py-2 ">

@@ -1,30 +1,39 @@
 import React from "react";
 import Image from "next/image";
 import SignUp from "/public/home/Sign-up.png";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, getProviders, signIn, signOut } from "next-auth/react";
 import { Router, useRouter } from "next/router";
 import { redirect } from "next/dist/server/api-utils";
 import useAuth from "../hook/useAuth";
 
-function login() {
+function Login({ providers }) {
+  const { data: session } = useSession();
   const { BuyNow, path } = useAuth();
   const router = useRouter();
-  console.log("route from", path);
-  console.log("route current", router.asPath);
-  const { data: session } = useSession();
-  // console.log("data", useSession());
-  const handleSignin = async () => {
-    // session ? redirect("/payment") : await router.push("/signup");
-    //path !== router.asPath ? router.push(router.asPath) : router.push("/");
-    if (!session) {
-      await signIn("google");
-    } else {
-      (await router.pathname) !== router.asPath
-        ? router.push(router.asPath)
-        : router.push("/");
-    }
+  //console.log("route from", path);
+  //console.log("route current", router.asPath);
+
+  const handleSignin = () => {
+    // if (!session) {
+    //   await signIn("google");
+    //   console.log("data", session.user);
+    //   // setTimeout(
+    //   //   await function displayHello() {
+    //   //     if (session.user?.email) {
+    //   //       console.log("data", session.user?.email);
+    //   //     }
+    //   //   },
+    //   //   7000
+    //   // );
+    //   setTimeout(() => {
+    //     console.log("eat");
+    //   }, 2000);
+    //   console.log("data is", session);
+    // }
   };
 
+  // session ? redirect("/payment") : await router.push("/signup");
+  //path !== router.asPath ? router.push(router.asPath) : router.push("/");
   return (
     <div className="container my-3 py-3" style={{ backgroundColor: "#F2EBDD" }}>
       <div
@@ -121,7 +130,11 @@ function login() {
                   color: "#ff8095",
                   border: 0,
                 }}
-                onClick={handleSignin}
+                onClick={() =>
+                  signIn("google", {
+                    callbackUrl: `${window.location.origin}${path}`,
+                  })
+                }
               >
                 Google
               </button>
@@ -154,4 +167,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;

@@ -12,14 +12,16 @@ function ExploreMore() {
   return (
     <div
       className="container mt-5 text-white"
-      style={{ backgroundColor: "#F2EBDD" }}
+      style={{ backgroundColor: "#ffddde" }}
     >
-      <div className="row gx-4 mt-5  ">
+      {/*     
+     style={{ backgroundColor: " F2EBDD" }} */}
+      <div className="row gx-4    ">
         <div className="col-md-7 d-flex justify-content-center align-items-center ">
           {/* explore more image*/}
           <div className="d-flex flex-column p-1">
             <h1 className="p-2 fs-1 fw-bolder  " style={{ color: "#ff8095" }}>
-              LIMITED EDITION
+              LIFESTYLE
             </h1>
             <button
               className="btn rounded-pill p-2 px-3"
@@ -29,18 +31,23 @@ function ExploreMore() {
             </button>
           </div>
         </div>
-        <div className="d-flex flex-column col-md-5  justify-content-center align-items-center m-auto p-2">
-          <div className="py-2">
-            {/* explore more image*/}
-            <a className="navbar-brand" href="">
+        <div className="d-flex flex-column col-md-5  justify-content-center align-items-center m-auto  ">
+          {/* explore more image*/}
+          {/* <a className="navbar-brand" href="">
               <img
                 style={{ width: 200, height: 160 }}
                 className="logo  "
                 src="/home/exploreMore-image.png"
                 alt=""
               />
-            </a>
-          </div>
+            </a> */}
+          <video
+            width=" 200px"
+            height="160px"
+            autoPlay
+            muted
+            src={"/videos/lifestyle.mp4"}
+          />
         </div>
       </div>
     </div>

@@ -156,9 +156,9 @@ GOOGLE_SECRET: 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, */
 }
 
 @media (max-width: 500px) {
-  .thumb {
+  /* .thumb {
     height: 50px;
-  }
+  } */
   .thumb img {
     width: 50px;
   }
