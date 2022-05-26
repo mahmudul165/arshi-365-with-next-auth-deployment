@@ -102,7 +102,26 @@ justify-content-center m-3 p-2 gx-0  "
                 <span className="fs-4 fw-bolder  mt-2 "> ৳</span>{" "}
                 {data.price || <Skeleton />}
               </p>
-              <p className="fs-5   mt-2 ">Status: In stock</p>
+
+              <div className="d-flex  align-items-center  ">
+                <div className="d-flex p-2">
+                  <p className="fs-5 ">Size*</p>
+
+                  <select
+                    className="form-select  mx-2"
+                    aria-label="Default select example"
+                  >
+                    <option value="1">S</option>
+                    <option value="2"> M</option>
+                    <option value="3">L</option>
+                    <option value="4">XL</option>
+                    <option value="5">XXL</option>
+                  </select>
+                </div>
+                <p className="fs-5   mt-2 ">
+                  Status: <span className="text-warning">In stock</span>
+                </p>
+              </div>
 
               {/* <p> Earn 5 Club Points</p> */}
               {/* increment decrement */}
