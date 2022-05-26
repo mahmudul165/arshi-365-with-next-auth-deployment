@@ -59,15 +59,15 @@ const Products = () => {
               </div>
             ))
           ) : (
-            <div className="row    text-center my-2 py-2 ">
-              <div className="col-sm-12 col-md-4 p-2  ">
-                <Skeleton height={300} />
+            <div className="row    text-center my-2 py-3 ">
+              <div className="col-sm-12 col-md-4 ps-2  ">
+                <Skeleton height={400} />
               </div>
-              <div className="col-sm-12 col-md-4 p-2  ">
-                <Skeleton height={300} />
+              <div className="col-sm-12 col-md-4 px-3  ">
+                <Skeleton height={400} />
               </div>
-              <div className="col-sm-12 col-md-4 p-2  ">
-                <Skeleton height={300} />
+              <div className="col-sm-12 col-md-4 pe-2  ">
+                <Skeleton height={400} />
               </div>
             </div>
           )}
