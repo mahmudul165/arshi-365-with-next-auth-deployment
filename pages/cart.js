@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useCart } from "react-use-cart";
@@ -40,6 +41,13 @@ const Cart = () => {
                 return (
                   <tr key={index}>
                     <td>
+                      {/* <Image
+                        src={item.image_one}
+                        alt="product-img"
+                        height={400}
+                        width={320}
+                        layout="responsive"
+                      /> */}
                       <img src={item.image_one} style={{ height: "6rem" }} />
                     </td>
 
