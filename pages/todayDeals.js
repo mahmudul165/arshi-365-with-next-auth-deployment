@@ -4,7 +4,9 @@ import Products from "../component/home/Products";
 import Image from "next/image";
 import ExploreImage from "/public/home/exploreMore-image.png";
 import ProductList from "./productList";
-function todayDeals() {
+import ProductsShowcase from "../component/Product/ProductsShowcase";
+import useSWR from "swr";
+function TodayDeals() {
   // const Button = styled.button`
   //   background-color: white;
   //   color: #ff8095;
@@ -13,6 +15,11 @@ function todayDeals() {
   // const H1 = styled.h1`
   //   color: #ff8095;
   // `;
+  const { data, error } = useSWR(
+    "https://arshi365.lamptechs.com/api/admin/todaysDeal",
+    { fetcher: async (url) => await fetch(url).then((res) => res.json()) }
+  );
+  console.log("todaydeal", data);
   return (
     <>
       <div
@@ -26,16 +33,6 @@ function todayDeals() {
               <h1 className="p-2 fs-1 fw-bolder  " style={{ color: "#ff8095" }}>
                 we don’t design clothes. we design dreams.”
               </h1>
-              {/* <button
-                className="btn rounded-pill p-2 px-3"
-                style={{
-                  backgroundColor: "white",
-                  color: "#ff8095",
-                  border: 0,
-                }}
-              >
-                EXPLORE MORE
-              </button> */}
             </div>
           </div>
           <div className="d-flex flex-column col-md-5  justify-content-center align-items-center m-auto  ">
@@ -67,12 +64,11 @@ function todayDeals() {
           </div>
         </div>
       </div>
-      {/* product */}
-
+      <ProductsShowcase data={data} />
       {/* <Products /> */}
-      <ProductList />
+      {/* <ProductList /> */}
     </>
   );
 }
 
-export default todayDeals;
+export default TodayDeals;

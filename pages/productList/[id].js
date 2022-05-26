@@ -63,7 +63,7 @@ justify-content-center m-3 p-2 gx-0  "
             </div>
             <div className="col-md-6 box">
               {/* slider img */}
-              <div className="p-2 d-flex ">
+              <div className=" d-flex ">
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_one}
@@ -72,7 +72,7 @@ justify-content-center m-3 p-2 gx-0  "
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_two}
-                  className="w-25 p-2 px-1"
+                  className="w-25 p-2 mx-3"
                 ></img>
                 <img
                   onClick={() => handleImage(event.target.src)}
@@ -140,30 +140,38 @@ justify-content-center m-3 p-2 gx-0  "
             </div>
           </>
         ) : (
-          <div className="row gx-4 p-2  ">
-            <div className="col p-3">
+          <div className="row   p-2 justfy-content-center p-3  ">
+            <div className="col    my-3">
               <Skeleton
                 borderRadius={10}
-                height={550}
-                width={400}
+                height={500}
+                width={320}
                 highlightColor={"white"}
               />
             </div>
-            <div className="col p-3">
-              <div className="  p-3  ">
+            <div className="col  ">
+              <div className="d-flex mb-2 ">
+                <div>
+                  <Skeleton height={80} width={73} />
+                </div>
+                <div className="mx-5">
+                  <Skeleton height={80} width={73} />
+                </div>
+                <div>
+                  <Skeleton height={80} width={73} />
+                </div>
+              </div>
+              <div className=" py-2 my-4">
+                <Skeleton height={110} />
+              </div>
+              <div className="   ">
                 <Skeleton height={50} />
               </div>
-              <div className="  p-3  ">
-                <Skeleton height={200} />
-              </div>
-              <div className="  p-3  ">
-                <Skeleton height={40} />
-              </div>
-              <div className="  p-3 ">
+              <div className=" py-2 my-4">
                 <Skeleton height={30} />
               </div>
-              <div className="  p-3  ">
-                <Skeleton height={50} />
+              <div className="   ">
+                <Skeleton height={30} />
               </div>
             </div>
           </div>

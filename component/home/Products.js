@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import useSWR from "swr";
+import ProductSliderHeader from "../Product/CatagoryName";
 
 const Products = () => {
   // store fetch data
@@ -20,13 +21,11 @@ const Products = () => {
   //console.log("testing data from apiAction", Products);
   return (
     <>
-      <h3 className="fs-1 fw-bolder pt-3 my-3" style={{ color: "#ff8095" }}>
+      {/* <h3 className="fs-1 fw-bolder pt-3 my-3" style={{ color: "#ff8095" }}>
         LIFESTYLE
-      </h3>
+      </h3> */}
+      <ProductSliderHeader catagoryName="LIFESTYLE" />
       <div className="container my-4" style={{ backgroundColor: "#ffddde" }}>
-        {/* <h3 className="fs-1 fw-bolder pt-3" style={{ color: "#ff8095" }}>
-          LIFESTYLE
-        </h3> */}
         <div className="row    text-center my-2  py-3 ">
           {data ? (
             data.map((product) => (
@@ -36,7 +35,7 @@ const Products = () => {
                     <img
                       src={product.image_one}
                       alt="E-COMMERCE  products"
-                      className="card-img-top  p-2  "
+                      className="card-img-top  p-2 "
                       width={336}
                       height={336}
                     />

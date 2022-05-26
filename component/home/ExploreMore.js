@@ -41,12 +41,18 @@ function ExploreMore() {
                 alt=""
               />
             </a> */}
-          <video
+          {/* <video
             width=" 200px"
             height="160px"
             autoPlay
             muted
             src={"/videos/lifestyle.mp4"}
+          /> */}
+          <img
+            style={{ width: 200, height: 160 }}
+            className="logo  "
+            src="/videos/homeslider.gif"
+            alt=""
           />
         </div>
       </div>
