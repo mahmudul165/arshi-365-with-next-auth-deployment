@@ -47,7 +47,7 @@ justify-content-center m-3 p-2 gx-0  "
           <>
             <div className="col-md-6 big-img">
               {Object.keys(imageSlider).length === 0 ? (
-                <img src={data.image_one} alt="product-img" />
+                <img src={data.image_one} alt="product-img" className="" />
               ) : (
                 <img src={imageSlider} alt="product-img" />
               )}
@@ -63,21 +63,21 @@ justify-content-center m-3 p-2 gx-0  "
             </div>
             <div className="col-md-6 box">
               {/* slider img */}
-              <div className="row py-2 my-2">
+              <div className="p-2 d-flex ">
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_one}
-                  className="col   thumb"
+                  className="w-25 p-2"
                 ></img>
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_two}
-                  className="col   thumb "
+                  className="w-25 p-2 px-1"
                 ></img>
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_three}
-                  className="col  thumb "
+                  className="w-25 p-2"
                 ></img>
               </div>
               <h2 className="py-2 my-2  text-uppercase">{data.name}</h2>
