@@ -47,38 +47,71 @@ justify-content-center m-3 p-2 gx-0  "
           <>
             <div className="col-md-6 big-img">
               {Object.keys(imageSlider).length === 0 ? (
-                <img src={data.image_one} alt="product-img" className="" />
+                <Image
+                  src={data.image_one}
+                  alt="product-img"
+                  height={400}
+                  width={320}
+                  layout="responsive"
+                />
               ) : (
-                <img src={imageSlider} alt="product-img" />
+                <Image
+                  src={imageSlider}
+                  alt="product-img"
+                  height={400}
+                  width={320}
+                  layout="responsive"
+                />
               )}
-
-              {/* test */}
-              {/* <Image
-       src={SignIn}
-       alt="product-img"
-       width={434}
-       height={475}
-       className=" ms-1"
-     /> */}
             </div>
-            <div className="col-md-6 box pt-2 ">
+            <div className="col-md-6 box  ">
               {/* slider img */}
-              <div className=" d-flex pt-1">
-                <img
+              <div className=" row  py-2">
+                {/* <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_one}
                   className="w-25  p-2"
-                ></img>
+                />
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_two}
                   className="w-25  p-2 mx-3"
-                ></img>
+                />
                 <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_three}
                   className="w-25  p-2"
-                ></img>
+                /> */}
+
+                <div className="col-4   w-25  p-2">
+                  <Image
+                    src={data.image_one}
+                    height={50}
+                    width={32}
+                    layout="responsive"
+                    onClick={() => handleImage(data.image_one)}
+                  />
+                </div>
+                <div className="col-4  w-25 py-2 p-2  ">
+                  {" "}
+                  <Image
+                    src={data.image_two}
+                    height={50}
+                    width={32}
+                    layout="responsive"
+                    onClick={() => handleImage(data.image_two)}
+                  />
+                </div>
+
+                <div className="col-4  w-25  p-2 ">
+                  <Image
+                    src={data.image_three}
+                    height={50}
+                    width={32}
+                    layout="responsive"
+                    onClick={() => handleImage(data.image_three)}
+                  />
+                </div>
               </div>
               <h2 className="py-2 my-2  text-uppercase">{data.name}</h2>
 
@@ -131,7 +164,7 @@ justify-content-center m-3 p-2 gx-0  "
                 <div className="my-2  btn-group btn-group-sm" role="group">
                   <button
                     onClick={() => addItem(data)}
-                    className="col btn btn-sm  rounded-pill p-2"
+                    className="col btn btn-sm  rounded-pill p-2 me-4"
                     style={{
                       backgroundColor: "white",
                       color: "#ff8095",
@@ -159,25 +192,24 @@ justify-content-center m-3 p-2 gx-0  "
             </div>
           </>
         ) : (
-          <div className="row   p-2 justfy-content-center p-3  ">
-            <div className="col    my-3">
+          <div className="row    p-2 justfy-content-center p-3  m-3">
+            <div className="col w-75    my-3">
               <Skeleton
                 borderRadius={10}
-                height={500}
-                width={320}
+                height={450}
                 highlightColor={"white"}
               />
             </div>
-            <div className="col  ">
-              <div className="d-flex mb-2 ">
+            <div className="col my-3 ">
+              <div className="d-flex mb-2 w-75">
                 <div>
-                  <Skeleton height={80} width={73} />
+                  <Skeleton height={80} width={65} />
                 </div>
                 <div className="mx-5">
-                  <Skeleton height={80} width={73} />
+                  <Skeleton height={80} width={65} />
                 </div>
                 <div>
-                  <Skeleton height={80} width={73} />
+                  <Skeleton height={80} width={65} />
                 </div>
               </div>
               <div className=" py-2 my-4">
@@ -189,8 +221,13 @@ justify-content-center m-3 p-2 gx-0  "
               <div className=" py-2 my-4">
                 <Skeleton height={30} />
               </div>
-              <div className="   ">
-                <Skeleton height={30} />
+              <div className="d-flex    ">
+                <div>
+                  <Skeleton height={30} width={73} />
+                </div>
+                <div className="ms-4">
+                  <Skeleton height={30} width={73} />
+                </div>
               </div>
             </div>
           </div>

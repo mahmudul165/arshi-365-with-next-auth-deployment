@@ -151,9 +151,24 @@ function Login({ providers }) {
                   })
                 }
               >
+                Facebook
+              </button>
+              <button
+                type="button"
+                className="btn btn-lg rounded-pill p-2 px-3 my-4 ms-2"
+                style={{
+                  backgroundColor: "white",
+                  color: "#ff8095",
+                  border: 0,
+                }}
+                onClick={() =>
+                  signIn("google", {
+                    callbackUrl: `${window.location.origin}${path}`,
+                  })
+                }
+              >
                 Google
               </button>
-
               {/* env: {
     GOOGLEID:
       "15718943464-1f137o9melpvo03mevc1orf2j2gg7j1a.apps.googleusercontent.com",
@@ -166,12 +181,18 @@ function Login({ providers }) {
                 {/* <h3 className="mt-5">
                   {session.user?.email || session.user?.name}
                 </h3> */}
+
                 <button
                   type="button"
-                  className="btn btn-primary btn-lg me-5 "
+                  className="btn btn-lg rounded-pill p-2 px-3 my-4 "
+                  style={{
+                    backgroundColor: "white",
+                    color: "#ff8095",
+                    border: 0,
+                  }}
                   onClick={signOut}
                 >
-                  signOut
+                  Sign Out
                 </button>
               </div>
             </>

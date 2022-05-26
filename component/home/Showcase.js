@@ -3,25 +3,46 @@ import Gallery from "react-photo-gallery";
 import Image from "next/image";
 import ProductSliderHeader from "../Product/ProductSliderHeader";
 import ButtonGlobal from "../Product/ButtonGlobal";
+import NewArrivalimage from "/public/images/11.png";
 function Showcase() {
   const photos = [
+    // {
+    //   src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+    //   width: 4,
+    //   height: 3,
+    // },
+    // {
+    //   src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+    //   width: 4,
+    //   height: 3,
+    // },
+    // {
+    //   src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+    //   width: 4,
+    //   height: 3,
+    // },
+    // {
+    //   src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+    //   width: 4,
+    //   height: 3,
+    // },
     {
-      src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+      src: "https://img.freepik.com/free-photo/woman-with-shopping-bags-studio-yellow-background-isolated_1303-14294.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
       width: 4,
       height: 3,
     },
     {
-      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      src: "https://img.freepik.com/free-photo/image-attractive-asian-geisha-woman-traditional-japanese-kimono_171337-85564.jpg?size=338&ext=jpg",
       width: 4,
       height: 3,
     },
     {
-      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      src: "https://img.freepik.com/free-vector/beautiful-girls_1284-3454.jpg?size=338&ext=jpg&ga=GA1.2.548484110.1648268856",
       width: 4,
       height: 3,
     },
     {
-      src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+      src: "https://img.freepik.com/free-photo/woman-black-trousers-purple-blouse-laughs-leaning-stand-with-elegant-clothes-pink-background_197531-17614.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
       width: 4,
       height: 3,
     },
@@ -40,8 +61,8 @@ function Showcase() {
           {/* image gallery*/}
           <div className="d-flex flex-column  p-2 m-2  ">
             <ProductSliderHeader catagoryName="NEW ARRIVALS" />
-            <Gallery photos={photos} className="p-2 my-4" />
-            <button
+            <Gallery photos={photos} className="p-2 mb-4" />
+            {/* <button
               className="btn rounded-pill p-2 px-3 my-4 "
               style={{
                 backgroundColor: "white",
@@ -50,8 +71,8 @@ function Showcase() {
               }}
             >
               EXPLORE MORE
-            </button>
-            {/* <ButtonGlobal btnname="EXPLORE MORE" btnaction="/productList" /> */}
+            </button> */}
+            <ButtonGlobal btnname="EXPLORE MORE" btnaction="/productList" />
           </div>
         </div>
         <div className="d-flex flex-column col-md-6  justify-content-center align-items-center m-auto ">
@@ -59,7 +80,7 @@ function Showcase() {
             {/* new arrival image*/}
             <a href="">
               <Image
-                src="/home/new arrivel 1.png"
+                src={NewArrivalimage}
                 alt="new arrrival product"
                 width={430}
                 height={546}

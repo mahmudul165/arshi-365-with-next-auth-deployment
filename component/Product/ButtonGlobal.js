@@ -6,7 +6,7 @@ function ButtonGlobal({ btnname, btnaction }) {
     <>
       <Link href={btnaction} passHref>
         <button
-          className="btn rounded-pill p-2 px-3 my-1"
+          className="btn rounded-pill p-2 px-3 my-3"
           style={{
             backgroundColor: "white",
             color: "#ff8095",

@@ -2,6 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import ButtonGlobal from "../Product/ButtonGlobal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSolid,
+  faBackward,
+  faArrowLeft,
+  faCircleArrowLeft,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 function SliderHome() {
   const settings = {
     dots: true,
@@ -15,35 +23,39 @@ function SliderHome() {
   };
   const photos = [
     {
-      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      src: "https://img.freepik.com/free-photo/fashionable-charming-girl-checkered-dress-laughing-red-wall-photo-female-model-wearing-heart-shaped-glasses-wicker-bag_197531-14332.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
     {
-      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      src: "https://img.freepik.com/free-photo/fashionable-pale-brunette-long-green-dress-black-jacket-sunglasses-standing-street-during-daytime-against-wall-light-city-building_197531-24468.jpg?w=740&t=st=1653590697~exp=1653591297~hmac=c5afad6296734881fc20e168ed220575e433e37798cf5161cf5507241d6a40c6",
+    },
+
+    {
+      src: "https://img.freepik.com/free-photo/stunning-curly-female-model-jumping-purple-indoor-portrait-slim-girl-bright-yellow-dress_197531-10836.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
     {
-      src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+      src: "https://img.freepik.com/free-photo/pretty-young-stylish-sexy-woman-pink-luxury-dress-summer-fashion-trend-chic-style-sunglasses-blue-studio-background-shopping-holding-paper-bags-talking-mobile-phone-shopaholic_285396-2957.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
     {
-      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      src: "https://img.freepik.com/free-photo/woman-with-shopping-bags-studio-yellow-background-isolated_1303-14294.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
     {
-      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      src: "https://img.freepik.com/free-photo/image-attractive-asian-geisha-woman-traditional-japanese-kimono_171337-85564.jpg?size=338&ext=jpg",
     },
     {
-      src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+      src: "https://img.freepik.com/free-vector/beautiful-girls_1284-3454.jpg?size=338&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
     {
-      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+      src: "https://img.freepik.com/free-photo/woman-black-trousers-purple-blouse-laughs-leaning-stand-with-elegant-clothes-pink-background_197531-17614.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
     {
-      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+      src: "https://img.freepik.com/free-photo/surprised-girl-pink-culottes-posing-with-trolley-full-multi-colored-packages-with-new-clothes_197531-14251.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
   ];
   return (
-    <section className="container   " style={{ backgroundColor: "#FFDDDE" }}>
-      <div className="row g-2 align-items-center   pt-2 pb-3 ">
-        <div className="col-sm-12 col-md-6    p-4 ">
-          <div className="p-2">
+    <section className="container p-4 " style={{ backgroundColor: "#FFDDDE" }}>
+      <div className="row g-2 align-items-center   pt-2 pb-3 p-4">
+        <div className="col-sm-12 col-md-5 ">
+          <div className="text-center">
             <div className=" h-100    border-light border-5  ">
               <h1
                 className="text-color   fw-bolder "
@@ -80,9 +92,9 @@ function SliderHome() {
             </div>
           </div>
         </div>
-        <div className="col-sm-12  col-md-6 p-4">
-          <div className="  d-flex justify-content-center align-items-center  ">
-            <div className="  card    border-light border-5">
+        <div className="col-sm-12  col-md-7  ">
+          <div className="  justify-content-center align-items-center  ">
+            <div className="  card    ">
               {/* start carousel */}
               <div
                 id="carouselExampleInterval"
@@ -97,11 +109,12 @@ function SliderHome() {
                         data-bs-interval="500"
                         key={photo.src}
                       >
-                        <img
+                        <Image
                           src={photo.src}
                           alt="new arrrival product"
-                          width={492}
+                          width={500}
                           height={562}
+                          layout="responsive"
                           className="d-block w-100"
                         />
                       </div>
@@ -109,16 +122,28 @@ function SliderHome() {
                   </Slider>
                 </div>
                 <button
-                  className="carousel-control-prev"
+                  className="carousel-control-prev fs-1 fw-bolder"
                   type="button"
                   data-bs-target="#carouselExampleInterval"
                   data-bs-slide="prev"
                 >
-                  <span
-                    className="carousel-control-prev-icon"
+                  {/* <span
+                    className="carousel-control-prev-icon  "
                     aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Previous</span>
+                  ></span> */}
+
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    style={{
+                      fontSize: 40,
+                      color: "black",
+                      backgroundColor: "white",
+                      border: "50%",
+                      fontWeight: "bolder",
+                      marginLeft: "-12px",
+                    }}
+                  />
+                  <span className="visually-hidden ">Previous</span>
                 </button>
                 <button
                   className="carousel-control-next"
@@ -126,10 +151,21 @@ function SliderHome() {
                   data-bs-target="#carouselExampleInterval"
                   data-bs-slide="next"
                 >
-                  <span
+                  {/* <span
                     className="carousel-control-next-icon"
                     aria-hidden="true"
-                  ></span>
+                  ></span> */}
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{
+                      fontSize: 40,
+                      color: "black",
+                      backgroundColor: "white",
+                      border: "50%",
+                      fontWeight: "bolder",
+                      marginRight: "-12px",
+                    }}
+                  />
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>

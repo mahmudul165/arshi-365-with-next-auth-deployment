@@ -48,6 +48,8 @@ function ProductTopSlider({ slidername, SliderImage, btnname, btnaction }) {
             src="/videos/homeslider.gif"
             alt=""
           /> */}
+          {/* sizes="320 640 750"
+    layout="responsive" */}
           <Image
             src={SliderImage}
             alt=" "

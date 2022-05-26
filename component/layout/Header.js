@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+//import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
@@ -8,9 +8,9 @@ import { useCart } from "react-use-cart";
 import { useSession, signIn, signOut } from "next-auth/react";
 function Header() {
   const { data: session } = useSession();
-  const Button = styled.button`
-    background-color: #c1706f;
-  `;
+  // const Button = styled.button`
+  //   background-color: #c1706f;
+  // `;
 
   // navbar top
   const [show, setShow] = useState(true);
@@ -73,7 +73,7 @@ function Header() {
                 aria-describedby="basic-addon2"
               />
               <div className="input-group-append">
-                <Button
+                <button
                   className=" "
                   type="submit"
                   style={{
@@ -88,7 +88,7 @@ function Header() {
                       backgroundColor: "#c1706f",
                     }}
                   />
-                </Button>
+                </button>
               </div>
             </div>
           </div>

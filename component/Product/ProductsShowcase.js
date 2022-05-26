@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
@@ -11,13 +12,25 @@ function ProductsShowcase({ data }) {
             <div key={product.id} className="col-sm-12 col-md-4  my-2 py-1">
               <Link href={`productList/${product.id}`} passHref>
                 <div className="card border-0 ">
-                  <img
-                    src={product.image_one}
-                    alt="E-COMMERCE  products"
-                    className="card-img-top  p-2 "
-                    width={336}
-                    height={336}
-                  />
+                  <div>
+                    <Image
+                      src={product.image_one}
+                      alt="E-COMMERCE  products"
+                      className="card-img-top  p-2 "
+                      width={336}
+                      height={336}
+                      layout="responsive"
+                    />
+                  </div>
+                  {/* <Image
+                    src={sunset1}
+                    alt="Sunset"
+                    width={600}
+                    height={450}
+                    layout="responsive"
+                   placeholder="blur"
+                    blurDataURL="data:image/png;base64,[IMAGE_CODE_FROM_PNG_PIXEL]"
+                  /> */}
                   <div className="card-body">
                     <h6 className="card-title fs-6 fw-bolder">
                       {product.name}
