@@ -78,3 +78,27 @@ const Products = () => {
 };
 
 export default Products;
+
+// 6 skeleton
+{
+  /* <div className="row    text-center mt-2 py-3 gy-4">
+<div className="col-sm-12 col-md-4 ps-2  ">
+  <Skeleton height={400} />
+</div>
+<div className="col-sm-12 col-md-4 px-3  ">
+  <Skeleton height={400} />
+</div>
+<div className="col-sm-12 col-md-4 pe-2  ">
+  <Skeleton height={400} />
+</div>
+<div className="col-sm-12 col-md-4 ps-2  ">
+  <Skeleton height={400} />
+</div>
+<div className="col-sm-12 col-md-4 px-3  ">
+  <Skeleton height={400} />
+</div>
+<div className="col-sm-12 col-md-4 pe-2  ">
+  <Skeleton height={400} />
+</div>
+</div> */
+}
