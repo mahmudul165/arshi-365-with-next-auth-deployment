@@ -14,7 +14,7 @@ function TodayDeals() {
   return (
     <>
       <ProductTopSlider
-        slidername=" we don’t design clothes. we design dreams.”"
+        slidername="BENAROSHI WORLD"
         SliderImage={SliderImage}
         btnname="Today Deals More"
         btnaction="/productList"

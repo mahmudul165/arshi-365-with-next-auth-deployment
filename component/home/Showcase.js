@@ -1,6 +1,8 @@
 import React from "react";
 import Gallery from "react-photo-gallery";
 import Image from "next/image";
+import ProductSliderHeader from "../Product/ProductSliderHeader";
+import ButtonGlobal from "../Product/ButtonGlobal";
 function Showcase() {
   const photos = [
     {
@@ -37,14 +39,7 @@ function Showcase() {
         <div className="col-md-6   my-2 p-2">
           {/* image gallery*/}
           <div className="d-flex flex-column  p-2 m-2  ">
-            <div>
-              <h1
-                className="p-2 fs-1 fw-bolder responsive-new-arrival"
-                style={{ color: "#ff8095" }}
-              >
-                NEW ARRIVALS
-              </h1>
-            </div>
+            <ProductSliderHeader catagoryName="NEW ARRIVALS" />
             <Gallery photos={photos} className="p-2 my-4" />
             <button
               className="btn rounded-pill p-2 px-3 my-4 "
@@ -56,6 +51,7 @@ function Showcase() {
             >
               EXPLORE MORE
             </button>
+            {/* <ButtonGlobal btnname="EXPLORE MORE" btnaction="/productList" /> */}
           </div>
         </div>
         <div className="d-flex flex-column col-md-6  justify-content-center align-items-center m-auto ">

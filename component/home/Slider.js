@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import ButtonGlobal from "../Product/ButtonGlobal";
 function SliderHome() {
   const settings = {
     dots: true,
@@ -62,7 +63,7 @@ function SliderHome() {
                 at id pariatur omnis, et asperiores placeat, sed facere earum?
               </p>
 
-              <button
+              {/* <button
                 className="btn rounded-pill p-2 px-3 my-4 "
                 style={{
                   backgroundColor: "white",
@@ -71,7 +72,11 @@ function SliderHome() {
                 }}
               >
                 DISCOVER THE NEW STYLE
-              </button>
+              </button> */}
+              <ButtonGlobal
+                btnname="DISCOVER THE NEW STYLE"
+                btnaction="/productList"
+              />
             </div>
           </div>
         </div>

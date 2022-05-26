@@ -6,7 +6,8 @@ function ProductTopSlider({ slidername, SliderImage, btnname, btnaction }) {
   return (
     <div
       className="container mt-5 text-white"
-      style={{ backgroundColor: "#F2EBDD" }}
+      // #F2EBDD
+      style={{ backgroundColor: "#ffddde" }}
     >
       {/*     
    style={{ backgroundColor: " F2EBDD" }} */}

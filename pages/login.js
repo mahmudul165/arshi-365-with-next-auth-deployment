@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import SignIn from "/public/home/Sign-in.png";
+import Link from "next/link";
 function signUp() {
   return (
     <div
@@ -65,6 +66,17 @@ function signUp() {
             Login
           </button>
         </form>
+        {/* log in route */}
+        <div>
+          <p className="text-muted   mb-0">
+            Have already an account?
+            <Link href="/signup">
+              <a className="fw-bold text-body mx-2">
+                <u>sign up here</u>
+              </a>
+            </Link>
+          </p>
+        </div>
       </div>
       <div className="col-md-6 order-1 order-lg-1">
         <Image

@@ -5,6 +5,7 @@ import { useSession, getProviders, signIn, signOut } from "next-auth/react";
 import { Router, useRouter } from "next/router";
 import { redirect } from "next/dist/server/api-utils";
 import useAuth from "../hook/useAuth";
+import Link from "next/link";
 
 function Login({ providers }) {
   const { data: session } = useSession();
@@ -92,20 +93,34 @@ function Login({ providers }) {
                 I agree all statements in Terms of service
               </label>
             </div>
+
             {/* <button type="submit" className="btn btn-primary">
             Submit
           </button> */}
-            <button
-              className="btn btn-lg rounded-pill p-2 px-3 my-4 "
-              style={{
-                backgroundColor: "white",
-                color: "#ff8095",
-                border: 0,
-              }}
-            >
-              Register
-            </button>
+            <div>
+              <button
+                className="btn btn-lg rounded-pill p-2 px-3 my-2   "
+                style={{
+                  backgroundColor: "white",
+                  color: "#ff8095",
+                  border: 0,
+                }}
+              >
+                Register
+              </button>
+            </div>
           </form>
+          {/* log in route */}
+          <div>
+            <p className="text-muted   mb-0">
+              Have already an account?
+              <Link href="/login">
+                <a className="fw-bold text-body mx-2">
+                  <u>login here</u>
+                </a>
+              </Link>
+            </p>
+          </div>
         </div>
         <div className="col-md-6 order-1 order-lg-1">
           <Image
