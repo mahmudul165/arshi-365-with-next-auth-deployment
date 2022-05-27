@@ -297,46 +297,44 @@ function Header() {
                 />
               </a>
             </li>
-
-            <li className="nav-item">
-              <Link href="/todayDeals">
+            <Link href="/todayDeals" passHref>
+              <li className="nav-item">
                 <a
                   className="nav-link   active    text-dark "
                   aria-current="page"
                 >
                   Today Deals
                 </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link  ms-1 text-dark"
-                aria-current="page"
-                href="#"
-              >
-                Customer Care
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link ms-1 text-dark" href="#">
-                Gift Cards
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link ms-1 text-dark" href="#">
-                Tops
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link ms-1 text-dark" href="#">
-                New Arrivals
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link ms-1 text-dark" href="#">
-                Contact
-              </a>
-            </li>
+              </li>
+            </Link>
+            <Link href="/newArrivals" passHref>
+              <li className="nav-item">
+                <a className="nav-link ms-1 text-dark">New Arrivals</a>
+              </li>
+            </Link>
+            <Link href="/tops-collection" passHref>
+              <li className="nav-item">
+                <a className="nav-link ms-1 text-dark">Tops</a>
+              </li>
+            </Link>
+            <Link href="/gift-cards" passHref>
+              <li className="nav-item">
+                <a className="nav-link ms-1 text-dark">Gift Cards</a>
+              </li>
+            </Link>
+
+            <Link href="/customer-care" passHref>
+              <li className="nav-item">
+                <a className="nav-link  ms-1 text-dark" aria-current="page">
+                  Customer Care
+                </a>
+              </li>
+            </Link>
+            <Link href="/contact" passHref>
+              <li className="nav-item">
+                <a className="nav-link ms-1 text-dark">Contact</a>
+              </li>
+            </Link>
           </ul>
         </div>
       </nav>

@@ -7,7 +7,7 @@ import { redirect } from "next/dist/server/api-utils";
 import useAuth from "../hook/useAuth";
 import Link from "next/link";
 
-function Login({ providers }) {
+function Signup({ providers }) {
   const { data: session } = useSession();
   const { BuyNow, path } = useAuth();
   const router = useRouter();
@@ -15,22 +15,11 @@ function Login({ providers }) {
   //console.log("route current", router.asPath);
 
   const handleSignin = () => {
-    // if (!session) {
-    //   await signIn("google");
-    //   console.log("data", session.user);
-    //   // setTimeout(
-    //   //   await function displayHello() {
-    //   //     if (session.user?.email) {
-    //   //       console.log("data", session.user?.email);
-    //   //     }
-    //   //   },
-    //   //   7000
-    //   // );
-    //   setTimeout(() => {
-    //     console.log("eat");
-    //   }, 2000);
-    //   console.log("data is", session);
-    // }
+    path
+      ? signIn("google", {
+          callbackUrl: `${window.location.origin}${path}`,
+        })
+      : signIn("google");
   };
 
   // session ? redirect("/payment") : await router.push("/signup");
@@ -132,12 +121,41 @@ function Login({ providers }) {
           />
         </div>
       </div>
-      {/* example */}
+      {/* separator section added */}
+      <p className="fm-sns-title">
+        <hr />
+        <span className="left"></span>
+        <label>Or,Sign Up with</label>
+        <span className="right"></span> <hr />
+      </p>
+      {/* sign up with google and fackbook provider */}
       <>
         <div className="d-flex justify-content-center mx-4   me-2">
           {!session ? (
             <>
-              <button
+              <div className="d-flex justify-content-center ">
+                <img
+                  src="/home/icon-facebook.png"
+                  alt=""
+                  className="w-25  pe-1 me-3 "
+                  onClick={() =>
+                    signIn("google", {
+                      callbackUrl: `${window.location.origin}/`,
+                    })
+                  }
+                ></img>
+                <img
+                  src="/home/icon-google.png"
+                  alt=""
+                  className="w-25  "
+                  onClick={() =>
+                    signIn("google", {
+                      callbackUrl: `${window.location.origin}/`,
+                    })
+                  }
+                ></img>
+              </div>
+              {/* <button
                 type="button"
                 className="btn btn-lg rounded-pill p-2 px-3 my-4 "
                 style={{
@@ -168,7 +186,7 @@ function Login({ providers }) {
                 }
               >
                 Google
-              </button>
+              </button> */}
               {/* env: {
     GOOGLEID:
       "15718943464-1f137o9melpvo03mevc1orf2j2gg7j1a.apps.googleusercontent.com",
@@ -203,4 +221,4 @@ function Login({ providers }) {
   );
 }
 
-export default Login;
+export default Signup;

@@ -23,9 +23,6 @@ function SliderHome() {
   };
   const photos = [
     {
-      src: "https://img.freepik.com/free-photo/fashionable-charming-girl-checkered-dress-laughing-red-wall-photo-female-model-wearing-heart-shaped-glasses-wicker-bag_197531-14332.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
-    },
-    {
       src: "https://img.freepik.com/free-photo/fashionable-pale-brunette-long-green-dress-black-jacket-sunglasses-standing-street-during-daytime-against-wall-light-city-building_197531-24468.jpg?w=740&t=st=1653590697~exp=1653591297~hmac=c5afad6296734881fc20e168ed220575e433e37798cf5161cf5507241d6a40c6",
     },
 
@@ -38,9 +35,7 @@ function SliderHome() {
     {
       src: "https://img.freepik.com/free-photo/woman-with-shopping-bags-studio-yellow-background-isolated_1303-14294.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
-    {
-      src: "https://img.freepik.com/free-photo/image-attractive-asian-geisha-woman-traditional-japanese-kimono_171337-85564.jpg?size=338&ext=jpg",
-    },
+
     {
       src: "https://img.freepik.com/free-vector/beautiful-girls_1284-3454.jpg?size=338&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
@@ -109,7 +104,15 @@ function SliderHome() {
                         data-bs-interval="500"
                         key={photo.src}
                       >
-                        <Image
+                        {/* <Image
+                          src={photo.src}
+                          alt="new arrrival product"
+                          width={500}
+                          height={562}
+                          layout="responsive"
+                          className="d-block w-100"
+                        /> */}
+                        <img
                           src={photo.src}
                           alt="new arrrival product"
                           width={500}
@@ -127,12 +130,20 @@ function SliderHome() {
                   data-bs-target="#carouselExampleInterval"
                   data-bs-slide="prev"
                 >
-                  {/* <span
+                  <span
                     className="carousel-control-prev-icon  "
                     aria-hidden="true"
-                  ></span> */}
+                  ></span>
+                  {/* style={{
+                      fontSize: 40,
+                      color: "black",
 
-                  <FontAwesomeIcon
+                      border: "50%",
+                      fontWeight: "bolder",
+                      marginLeft: "-12px",
+                    }} */}
+
+                  {/* <FontAwesomeIcon
                     icon={faArrowLeft}
                     style={{
                       fontSize: 40,
@@ -142,7 +153,7 @@ function SliderHome() {
                       fontWeight: "bolder",
                       marginLeft: "-12px",
                     }}
-                  />
+                  /> */}
                   <span className="visually-hidden ">Previous</span>
                 </button>
                 <button
@@ -151,11 +162,11 @@ function SliderHome() {
                   data-bs-target="#carouselExampleInterval"
                   data-bs-slide="next"
                 >
-                  {/* <span
+                  <span
                     className="carousel-control-next-icon"
                     aria-hidden="true"
-                  ></span> */}
-                  <FontAwesomeIcon
+                  ></span>
+                  {/* <FontAwesomeIcon
                     icon={faArrowRight}
                     style={{
                       fontSize: 40,
@@ -165,7 +176,7 @@ function SliderHome() {
                       fontWeight: "bolder",
                       marginRight: "-12px",
                     }}
-                  />
+                  /> */}
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>

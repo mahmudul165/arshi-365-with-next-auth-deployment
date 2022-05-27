@@ -15,8 +15,9 @@ const useGlobal = () => {
 
   const BuyNow = async () => {
     !session
-      ? await router.push("/signup", setpath(router.asPath))
+      ? await router.push("/login", setpath(router.asPath))
       : await router.push("/payment");
+
     //console.log("path name from", router.pathname);
     //console.log("check route", router);
 

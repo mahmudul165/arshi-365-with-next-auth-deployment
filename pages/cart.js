@@ -3,10 +3,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useCart } from "react-use-cart";
 import useAuth from "../hook/useAuth";
+import { useSession, getProviders, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Cart = () => {
   const [Cupon, setCupon] = useState({});
-  const { BuyNow } = useAuth();
+
+  const { data: session } = useSession();
+  const { BuyNow, path } = useAuth();
+  const router = useRouter();
   const {
     isEmpty,
     totalUniqueItems,
@@ -22,10 +27,46 @@ const Cart = () => {
   };
   if (isEmpty)
     return (
-      <div className="container card my-5 py-5 fs-1 border-0 bg-light rounded">
-        <h1 className="container card my-5 py-5 text-center fs-1 fs-bolder border-0 shadow-lg">
-          Your cart is Empty
-        </h1>
+      <div className="container card   fs-1 border-0 bg-light rounded">
+        <div
+          className="container card my-5 p-5 text-center fs-1 fs-bolder border-0 shadow-lg"
+          style={{ width: "60rem" }}
+        >
+          <small>Your cart is Empty</small>
+          {/* separator section added */}
+          <p className="fm-sns-title">
+            <span className="left">
+              <hr />
+            </span>
+
+            <label>Or,login with</label>
+            <span className="right">
+              <hr />
+            </span>
+          </p>
+          <div className="d-flex justify-content-center ">
+            <img
+              src="/home/icon-facebook.png"
+              alt=""
+              className="w-25  pe-1 me-3 "
+              onClick={() =>
+                signIn("google", {
+                  callbackUrl: `${window.location.origin}/`,
+                })
+              }
+            ></img>
+            <img
+              src="/home/icon-google.png"
+              alt=""
+              className="w-25  "
+              onClick={() =>
+                signIn("google", {
+                  callbackUrl: `${window.location.origin}/`,
+                })
+              }
+            ></img>
+          </div>
+        </div>
       </div>
     );
   return (

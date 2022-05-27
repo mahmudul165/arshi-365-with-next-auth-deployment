@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Meta from "../component/seo/Meta";
 import Showcase from "../component/home/Showcase";
 import ExploreMore from "../component/home/ExploreMore";
