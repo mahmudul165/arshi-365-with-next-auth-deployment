@@ -5,6 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* logo icon */}
+          <link rel="shortcut icon" href="/home/logo.png" />
           {/* css from brootstrap   */}
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"

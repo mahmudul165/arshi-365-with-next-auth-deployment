@@ -15,7 +15,7 @@ function Header() {
   // navbar top
   const [show, setShow] = useState(true);
   const controlNavbar = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 20) {
       setShow(false);
     } else {
       setShow(true);
@@ -284,7 +284,7 @@ function Header() {
 
             <li className="nav-item">
               <a
-                href=""
+                href="/"
                 className="nav-link   active  ms-4 text-dark "
                 aria-current="page"
               >
@@ -298,42 +298,30 @@ function Header() {
               </a>
             </li>
             <Link href="/todayDeals" passHref>
-              <li className="nav-item">
-                <a
-                  className="nav-link   active    text-dark "
-                  aria-current="page"
-                >
-                  Today Deals
-                </a>
-              </li>
+              <a
+                className="nav-link   active    text-dark "
+                aria-current="page"
+              >
+                Today Deals
+              </a>
             </Link>
             <Link href="/newArrivals" passHref>
-              <li className="nav-item">
-                <a className="nav-link ms-1 text-dark">New Arrivals</a>
-              </li>
+              <a className="nav-link ms-1 text-dark">New Arrivals</a>
             </Link>
             <Link href="/tops-collection" passHref>
-              <li className="nav-item">
-                <a className="nav-link ms-1 text-dark">Tops</a>
-              </li>
+              <a className="nav-link ms-1 text-dark">Tops</a>
             </Link>
             <Link href="/gift-cards" passHref>
-              <li className="nav-item">
-                <a className="nav-link ms-1 text-dark">Gift Cards</a>
-              </li>
+              <a className="nav-link ms-1 text-dark">Gift Cards</a>
             </Link>
 
             <Link href="/customer-care" passHref>
-              <li className="nav-item">
-                <a className="nav-link  ms-1 text-dark" aria-current="page">
-                  Customer Care
-                </a>
-              </li>
+              <a className="nav-link  ms-1 text-dark" aria-current="page">
+                Customer Care
+              </a>
             </Link>
             <Link href="/contact" passHref>
-              <li className="nav-item">
-                <a className="nav-link ms-1 text-dark">Contact</a>
-              </li>
+              <a className="nav-link ms-1 text-dark">Contact</a>
             </Link>
           </ul>
         </div>

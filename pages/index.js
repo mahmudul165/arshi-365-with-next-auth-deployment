@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <Meta
-        title="Arshi-365-ecommerce"
+        title="Arshi 365 Online Shooping in Bangladesh"
         keywords="ecommerce,product,sewrvices"
         description="Arshi-365-ecommerce cwsgeg gergerg gedgerg degersger egvvesrgeg gwergewgerwghergherh"
         image="test purpose"
