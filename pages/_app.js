@@ -8,7 +8,7 @@ import Header from "../component/layout/Header";
 import Footer from "../component/layout/Footer";
 import { CartProvider } from "react-use-cart";
 import AuthProvider from "../contexts/AuthProvider";
-
+import { AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   //const getLayout = Component.getLayout || ((page) => page);
   //console.log("page is",getLayout)
@@ -37,7 +37,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <AuthProvider>
           <CartProvider>
             <Layout>
-              <Component {...pageProps} />
+              <AnimatePresence exitBeforeEnter>
+                <Component {...pageProps} />
+              </AnimatePresence>
             </Layout>
           </CartProvider>
         </AuthProvider>

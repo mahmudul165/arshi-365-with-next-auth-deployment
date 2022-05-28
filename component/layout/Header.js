@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+//motion farmar
+
+import { render } from "react-dom";
+import { motion, MotionConfig } from "framer-motion";
+
 //import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +43,9 @@ function Header() {
     removeItem,
     emptyCart,
   } = useCart();
+
+  // farmar motion
+  const [count, setCount] = useState(0);
   return (
     <header
       className={`  sticky-top  header-bg    ${
@@ -49,18 +57,18 @@ function Header() {
         {/* web view */}
         <div className="container-fluid  ">
           {/* logo part  section*/}
-          <div className="   ">
-            <Link href="/">
-              <a className="navbar-brand">
-                <Image
-                  src="/home/logo.png"
-                  alt="ECOMMERCE  LOGO"
-                  width={75}
-                  height={75}
-                />
-              </a>
-            </Link>
-          </div>
+
+          <Link href="/">
+            <a className="navbar-brand">
+              <Image
+                src="/home/logo.png"
+                alt="ECOMMERCE  LOGO"
+                width={75}
+                height={75}
+              />
+            </a>
+          </Link>
+
           {/* search section */}
           <div className="w-50 d-flex justify-content-center align-items-center  responsive-search pe-4">
             {/* search part */}
@@ -282,9 +290,8 @@ function Header() {
           <ul className="navbar-nav m-auto   mb-lg-0">
             {/* register  */}
 
-            <li className="nav-item">
+            <Link href="/" passhref>
               <a
-                href="/"
                 className="nav-link   active  ms-4 text-dark "
                 aria-current="page"
               >
@@ -296,7 +303,8 @@ function Header() {
                   className=" "
                 />
               </a>
-            </li>
+            </Link>
+
             <Link href="/todayDeals" passHref>
               <a
                 className="nav-link   active    text-dark "

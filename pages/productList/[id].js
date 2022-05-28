@@ -12,7 +12,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import useAuth from "../../hook/useAuth";
 import { useCart } from "react-use-cart";
-
+import { motion } from "framer-motion";
 const ProductDetails = () => {
   const { addItem } = useCart();
   const { BuyNow } = useAuth();
@@ -36,6 +36,32 @@ const ProductDetails = () => {
   //console.log("img first", handleImage);
   const { items, updateItemQuantity } = useCart();
   console.log(" items array is", items);
+  // farmer motion
+  let easing = [0.6, -0.05, 0.01, 0.99];
+
+  const stagger = {
+    animate: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const fadeInUp = {
+    initial: {
+      y: 60,
+      opacity: 0,
+      transition: { duration: 0.6, ease: easing },
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: easing,
+      },
+    },
+  };
   return (
     <div className="container details">
       <div
@@ -45,7 +71,11 @@ justify-content-center m-3 p-2 gx-0  "
       >
         {data ? (
           <>
-            <div className="col-md-6 big-img">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.4 }}
+              className="col-md-6 big-img"
+            >
               {Object.keys(imageSlider).length === 0 ? (
                 <Image
                   src={data.image_one}
@@ -63,10 +93,10 @@ justify-content-center m-3 p-2 gx-0  "
                   layout="responsive"
                 />
               )}
-            </div>
-            <div className="col-md-6 box  ">
+            </motion.div>
+            <motion.div variants={stagger} className="col-md-6 box  ">
               {/* slider img */}
-              <div className=" row  py-2">
+              <motion.div variants={fadeInUp} className=" row py-2">
                 {/* <img
                   onClick={() => handleImage(event.target.src)}
                   src={data.image_one}
@@ -82,7 +112,6 @@ justify-content-center m-3 p-2 gx-0  "
                   src={data.image_three}
                   className="w-25  p-2"
                 /> */}
-
                 <div className="col-4   w-25  p-2">
                   <Image
                     src={data.image_one}
@@ -102,7 +131,6 @@ justify-content-center m-3 p-2 gx-0  "
                     onClick={() => handleImage(data.image_two)}
                   />
                 </div>
-
                 <div className="col-4  w-25  p-2 ">
                   <Image
                     src={data.image_three}
@@ -112,20 +140,26 @@ justify-content-center m-3 p-2 gx-0  "
                     onClick={() => handleImage(data.image_three)}
                   />
                 </div>
-              </div>
-              <h2 className="py-2 my-2  text-uppercase">{data.name}</h2>
+              </motion.div>
+              <motion.h2
+                variants={fadeInUp}
+                className="py-2 my-2  text-uppercase"
+              >
+                {data.name}
+              </motion.h2>
 
               {/* review section */}
-              <div>
+              <motion.div variants={stagger}>
                 <StarRating />
                 <div className="fs-5 fw-bold  my-2 py-1 ">
                   <small> 3 Review</small>
                   <small className="ms-2">| Add your Review</small>
                 </div>
-              </div>
-              <p>{data.short_description}</p>
+              </motion.div>
+              <motion.p variants={stagger}>{data.short_description}</motion.p>
 
-              <p
+              <motion.p
+                variants={stagger}
                 className="fs-4 fw-bolder mt-2 "
                 style={{
                   color: "#ff8095",
@@ -134,9 +168,12 @@ justify-content-center m-3 p-2 gx-0  "
               >
                 <span className="fs-4 fw-bolder  mt-2 "> ৳</span>{" "}
                 {data.price || <Skeleton />}
-              </p>
+              </motion.p>
 
-              <div className="d-flex  align-items-center  ">
+              <motion.div
+                variants={fadeInUp}
+                className="d-flex  align-items-center  "
+              >
                 <div className="d-flex p-2">
                   <p className="fs-5 ">Size*</p>
 
@@ -154,13 +191,13 @@ justify-content-center m-3 p-2 gx-0  "
                 <p className="fs-5   mt-2 ">
                   Status: <span className="text-warning">In stock</span>
                 </p>
-              </div>
+              </motion.div>
 
               {/* <p> Earn 5 Club Points</p> */}
               {/* increment decrement */}
               {/* <IncrementDecrement /> */}
 
-              <div>
+              <motion.div variants={fadeInUp}>
                 <div className="my-2  btn-group btn-group-sm" role="group">
                   <button
                     onClick={() => addItem(data)}
@@ -188,8 +225,8 @@ justify-content-center m-3 p-2 gx-0  "
                   </button>
                   {/* </Link> */}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </>
         ) : (
           <div className="row    p-2 justfy-content-center p-3  m-3">

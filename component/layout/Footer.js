@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -8,15 +9,17 @@ function Footer() {
         <div className="row gx-4 mt-5 p-3 ">
           <div className="col-md-2 d-flex justify-content-center align-items-center ">
             {/* logo part  section*/}
-            <a className="navbar-brand" href="">
-              <Image
-                src="/home/logo.png"
-                alt="Picture LOGO"
-                width={75}
-                height={75}
-                className="logo "
-              />
-            </a>
+            <Link href="/">
+              <a className="navbar-brand">
+                <Image
+                  src="/home/logo.png"
+                  alt="Picture LOGO"
+                  width={75}
+                  height={75}
+                  className="logo "
+                />
+              </a>
+            </Link>
           </div>
           <div className="d-flex flex-column col-md-8  justify-content-center align-items-center m-auto p-2">
             <div className="py-2   text-center">

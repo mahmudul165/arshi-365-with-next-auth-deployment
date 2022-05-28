@@ -6,7 +6,7 @@ function ProductTopSlider({ slidername, SliderImage, btnname, btnaction }) {
   const [{ background }] = useSpring(
     () => ({
       from: {
-        background: "var(--from, pink)",
+        background: "var(--from, #3B0273 )",
       },
       to: {
         background: "var(--to, purple)",
@@ -30,9 +30,7 @@ function ProductTopSlider({ slidername, SliderImage, btnname, btnaction }) {
         <div className="col-md-7 d-flex justify-content-center align-items-center ">
           {/* explore more image*/}
           <div className="d-flex flex-column p-1 text-center">
-            <h1 className="p-2 fs-1 fw-bolder  " style={{ color: "#ff8095" }}>
-              {slidername}
-            </h1>
+            <h1 className="p-2 fs-1 fw-bolder  ">{slidername}</h1>
             <Link href={btnaction} passHref>
               <button
                 className="btn rounded-pill p-2 px-3 my-1"
