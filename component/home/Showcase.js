@@ -33,11 +33,6 @@ function Showcase() {
     },
 
     {
-      src: "https://img.freepik.com/free-vector/beautiful-girls_1284-3454.jpg?size=338&ext=jpg&ga=GA1.2.548484110.1648268856",
-      width: 4,
-      height: 3,
-    },
-    {
       src: "https://img.freepik.com/free-photo/fashionable-pale-brunette-long-green-dress-black-jacket-sunglasses-standing-street-during-daytime-against-wall-light-city-building_197531-24468.jpg?w=740&t=st=1653590697~exp=1653591297~hmac=c5afad6296734881fc20e168ed220575e433e37798cf5161cf5507241d6a40c6",
       width: 4,
       height: 3,

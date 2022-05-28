@@ -17,15 +17,24 @@ const useGlobal = () => {
     !session
       ? await router.push("/login", setpath(router.asPath))
       : await router.push("/payment");
-
-    //console.log("path name from", router.pathname);
-    //console.log("check route", router);
-
-    //path!== router.asPath ? router.push(router.asPath) : router.push("/")
   };
-  // products list
+  // search input catch
+  const [searchInput, setInput] = useState("");
+  const handleSearchChange = (e) => {
+    e.preventDefault();
+    setInput(e.target.value.toLowerCase());
+    console.log(searchInput);
+  };
 
-  return { session, signInUsingGoogle, logOut, BuyNow, path };
+  return {
+    session,
+    signInUsingGoogle,
+    logOut,
+    BuyNow,
+    handleSearchChange,
+    path,
+    searchInput,
+  };
 };
 
 export default useGlobal;

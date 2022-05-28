@@ -20,7 +20,7 @@ function SliderHome() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
   };
   const photos = [
@@ -38,9 +38,6 @@ function SliderHome() {
       src: "https://img.freepik.com/free-photo/woman-with-shopping-bags-studio-yellow-background-isolated_1303-14294.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },
 
-    {
-      src: "https://img.freepik.com/free-vector/beautiful-girls_1284-3454.jpg?size=338&ext=jpg&ga=GA1.2.548484110.1648268856",
-    },
     {
       src: "https://img.freepik.com/free-photo/woman-black-trousers-purple-blouse-laughs-leaning-stand-with-elegant-clothes-pink-background_197531-17614.jpg?size=626&ext=jpg&ga=GA1.2.548484110.1648268856",
     },

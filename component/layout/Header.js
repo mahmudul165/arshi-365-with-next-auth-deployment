@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from "react";
-//motion farmar
-
-import { render } from "react-dom";
-import { motion, MotionConfig } from "framer-motion";
-
-//import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faRectangleList } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "react-use-cart";
 import { useSession, signIn, signOut } from "next-auth/react";
+import useAuth from "/hook/useAuth";
 function Header() {
   const { data: session } = useSession();
-  // const Button = styled.button`
-  //   background-color: #c1706f;
-  // `;
-
   // navbar top
   const [show, setShow] = useState(true);
   const controlNavbar = () => {
@@ -43,9 +34,27 @@ function Header() {
     removeItem,
     emptyCart,
   } = useCart();
+  //search
+  const { handleSearchChange, searchInput } = useAuth();
+  const [results, setResults] = useState([]);
 
-  // farmar motion
-  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const urls = [
+      "https://arshi365.lamptechs.com/api/admin/products",
+      "https://arshi365.lamptechs.com/api/admin/todaysDeal",
+    ];
+
+    Promise.all(
+      urls.map((url) =>
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => setResults(data))
+          .catch((error) => console.log("There was a problem!", error))
+      ),
+      []
+    );
+  }, []);
+
   return (
     <header
       className={`  sticky-top  header-bg    ${
@@ -79,24 +88,29 @@ function Header() {
                 placeholder="Search for products, brands and more"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                onChange={handleSearchChange}
               />
+              {/* search result optimized */}
+
               <div className="input-group-append">
-                <button
-                  className=" "
-                  type="submit"
-                  style={{
-                    backgroundColor: "#c1706f",
-                  }}
-                >
-                  <FontAwesomeIcon
-                    icon={faSearch}
+                <Link href="/search" passHref>
+                  <button
+                    className=" "
+                    type="submit"
                     style={{
-                      fontSize: 30,
-                      color: "white",
                       backgroundColor: "#c1706f",
                     }}
-                  />
-                </button>
+                  >
+                    <FontAwesomeIcon
+                      icon={faSearch}
+                      style={{
+                        fontSize: 30,
+                        color: "white",
+                        backgroundColor: "#c1706f",
+                      }}
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -240,31 +254,6 @@ function Header() {
             </>
           )}
           {/* end */}
-          {/* <div className=" d-flex  ">
-            <Image
-              src="/home/icon-login.png"
-              alt="Picture of the author"
-              width={20}
-              height={20}
-              className="d-inline-block align-text-top  "
-            />
-            <Link href="/login">
-              <a className="ms-1   text-decoration-none text-dark">LOGIN</a>
-            </Link>
-          </div> */}
-          {/* register  */}
-          {/* <div className="text-center d-flex   ms-1">
-            <Image
-              src="/home/icon-register.png"
-              alt="icon-register"
-              width={20}
-              height={20}
-              className=" ms-1"
-            />
-            <Link href="/signup">
-              <a className="ms-1   text-decoration-none text-dark">REGISTER</a>
-            </Link>
-          </div> */}
         </div>
       </nav>
       {/* 2nd navbar */}
