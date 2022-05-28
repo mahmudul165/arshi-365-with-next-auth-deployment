@@ -6,6 +6,8 @@ import { Router, useRouter } from "next/router";
 import { redirect } from "next/dist/server/api-utils";
 import useAuth from "../hook/useAuth";
 import Link from "next/link";
+import ButtonGlobal from "../component/Product/ButtonGlobal";
+import ProductSliderHeader from "../component/Product/ProductSliderHeader";
 
 function Signup({ providers }) {
   const { data: session } = useSession();
@@ -31,12 +33,13 @@ function Signup({ providers }) {
       justify-content-center mt-4"
       >
         <div className="col-md-6 order-2 order-lg-1">
-          <h1
+          {/* <h1
             className="py-2 my-2 fs-1 fw-bolder "
             style={{ color: "#ff8095" }}
           >
             SIGN UP
-          </h1>
+          </h1> */}
+          <ProductSliderHeader catagoryName="SIGN UP" />
           <form>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -87,11 +90,12 @@ function Signup({ providers }) {
             Submit
           </button> */}
             <div>
+              {/* <ButtonGlobal btnname=" Register" btnaction="/signup" /> */}
               <button
-                className="btn btn-lg rounded-pill p-2 px-3 my-2   "
+                className="btn rounded-pill p-2 px-3 my-1  fs-5 fw-bold "
                 style={{
                   backgroundColor: "white",
-                  color: "#ff8095",
+                  color: "#FF0099",
                   border: 0,
                 }}
               >

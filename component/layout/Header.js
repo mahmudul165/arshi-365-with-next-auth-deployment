@@ -84,8 +84,8 @@ function Header() {
             <div className="input-group ">
               <input
                 type="text"
-                className="form-control  "
-                placeholder="Search for products, brands and more"
+                className="form-control  bg-light"
+                placeholder="Search in Arshi"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
                 onChange={handleSearchChange}

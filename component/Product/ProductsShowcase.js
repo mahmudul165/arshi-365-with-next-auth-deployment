@@ -47,7 +47,7 @@ function ProductsShowcase({ data }) {
       <motion.div variants={stagger} className="row    text-center my-2  py-3 ">
         {data ? (
           data.map((product) => (
-            <div key={product.id} className="col-sm-12 col-md-4  my-2 py-1">
+            <div key={product.id} className="col-sm-12 col-md-3  my-2 py-1">
               <Link href={`productList/${product.id}`} passHref>
                 <motion.div
                   variants={fadeInUp}
@@ -63,7 +63,7 @@ function ProductsShowcase({ data }) {
                     alt="E-COMMERCE  products"
                     className="card-img-top  p-2 "
                     width={336}
-                    height={336}
+                    height={230}
                     layout="responsive"
                   />
 
@@ -83,18 +83,24 @@ function ProductsShowcase({ data }) {
                       initial={{ opacity: 0 }}
                       className="title"
                     >
-                      <h6 className="card-title fs-6 fw-bolder">
+                      <h6
+                        className="card-title fs-6 fw-bolder"
+                        style={{
+                          color: "#000000",
+                          border: 0,
+                        }}
+                      >
                         {product.name}
                       </h6>{" "}
                     </motion.div>
                     <p
                       className="text-center fs-5 fw-bolder "
                       style={{
-                        color: "#ff8095",
+                        color: "#FF0099",
                         border: 0,
                       }}
                     >
-                      ৳{product.price}
+                      ৳ {product.price}
                     </p>
                   </div>
                 </motion.div>
@@ -103,14 +109,32 @@ function ProductsShowcase({ data }) {
           ))
         ) : (
           <div className="row    text-center my-2 py-3 ">
-            <div className="col-sm-12 col-md-4 ps-2  ">
-              <Skeleton height={400} />
+            <div className="col-sm-12 col-md-3 ps-2  ">
+              <Skeleton height={250} />{" "}
+              <div>
+                <Skeleton height={30} /> <Skeleton height={30} />
+              </div>
             </div>
-            <div className="col-sm-12 col-md-4 px-3  ">
-              <Skeleton height={400} />
+            <div className="col-sm-12 col-md-3 px-3  ">
+              <Skeleton height={250} />{" "}
+              <div>
+                <Skeleton height={30} /> <Skeleton height={30} />
+              </div>
             </div>
-            <div className="col-sm-12 col-md-4 pe-2  ">
-              <Skeleton height={400} />
+            <div className="col-sm-12 col-md-3 pe-2  ">
+              <Skeleton height={250} />{" "}
+              <div>
+                <Skeleton height={30} /> <Skeleton height={30} />
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-3 pe-2  ">
+              <div>
+                <Skeleton height={250} />
+                <div>
+                  <Skeleton height={30} /> <Skeleton height={30} />
+                </div>
+                <div></div>
+              </div>
             </div>
           </div>
         )}

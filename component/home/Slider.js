@@ -55,18 +55,19 @@ function SliderHome() {
             <div className="text-center">
               <div className=" h-100    border-light border-5  ">
                 <h1
-                  className="text-color   fw-bolder "
-                  style={{ fontSize: "73px" }}
+                  className="    fw-bolder "
+                  style={{ fontSize: "73px", color: "#FF0099" }}
                 >
                   Arshi
                 </h1>
+
                 <h5
                   className="card-title text-color py-2"
                   style={{ fontSize: "42px" }}
                 >
                   365
                 </h5>
-                <p className="py-2 ">
+                <p className="py-2  fw-bold" style={{ wordSpacing: "3px" }}>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Consequatur similique quibusdam velit fugit rem, reprehenderit
                   at id pariatur omnis, et asperiores placeat, sed facere earum?

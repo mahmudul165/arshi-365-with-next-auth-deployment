@@ -7,6 +7,7 @@ import { faGoogle } from "@fortawesome/free-solid-svg-icons";
 import { useSession, getProviders, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import useAuth from "../hook/useAuth";
+import ProductSliderHeader from "../component/Product/ProductSliderHeader";
 
 function Login() {
   const { data: session } = useSession();
@@ -19,12 +20,14 @@ function Login() {
       justify-content-center  "
       >
         <div className="col-md-6 order-2 order-lg-1">
-          <h1
+          {/* <h1
             className="py-2 my-2 fs-1 fw-bolder "
             style={{ color: "#ff8095" }}
           >
             SIGN IN
-          </h1>
+          </h1>  */}
+
+          <ProductSliderHeader catagoryName="SIGN IN" />
           <form>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -59,10 +62,10 @@ function Login() {
               </label>
             </div>
             <button
-              className="btn btn-lg rounded-pill p-2 px-3 my-4 "
+              className="btn rounded-pill p-2 px-3 my-1  fs-5 fw-bold "
               style={{
                 backgroundColor: "white",
-                color: "#ff8095",
+                color: "#FF0099",
                 border: 0,
               }}
             >

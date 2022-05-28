@@ -33,10 +33,10 @@ function ProductTopSlider({ slidername, SliderImage, btnname, btnaction }) {
             <h1 className="p-2 fs-1 fw-bolder  ">{slidername}</h1>
             <Link href={btnaction} passHref>
               <button
-                className="btn rounded-pill p-2 px-3 my-1"
+                className="btn rounded-pill p-2 px-3 my-1  fs-5 fw-bold "
                 style={{
                   backgroundColor: "white",
-                  color: "#ff8095",
+                  color: "#FF0099",
                   border: 0,
                 }}
               >
