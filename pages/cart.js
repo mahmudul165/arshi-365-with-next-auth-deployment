@@ -182,10 +182,10 @@ const Cart = () => {
                     );
                   })}
 
-                  <div className="d-flex justify-content-end my-4">
+                  <div className="d-flex justify-content-end m-4">
                     <button
                       onClick={() => emptyCart()}
-                      className="btn btn-sm   p-2   my-1 m-1 fs-5 fw-bold mt-4"
+                      className="btn btn-info btn-block btn-lg"
                       style={{
                         backgroundColor: "#c53b240d",
                         color: "#FF0099",
@@ -197,7 +197,7 @@ const Cart = () => {
 
                     <button
                       onClick={BuyNow}
-                      className="btn btn-sm   p-2   my-1 m-1 fs-5 fw-bold mt-4"
+                      className="btn btn-info btn-block btn-lg ms-2"
                       style={{
                         backgroundColor: "#c53b240d",
                         color: "#FF0099",
