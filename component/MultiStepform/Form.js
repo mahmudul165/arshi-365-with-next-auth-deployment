@@ -22,11 +22,7 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = [
-    "Delivery Information",
-    "Payment",
-    "Select Payment Method",
-  ];
+  const FormTitles = ["Shipping Address", "Payment", "Select Payment Method"];
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -74,36 +70,13 @@ function Form() {
             {/* <h1>{FormTitles[page]}</h1> */}
             <h6
               className="p-2  mb-2 fs-4 fw-bolder  "
-              style={{ color: "#ff8095" }}
+              style={{ color: "#FF0099" }}
             >
               {FormTitles[page]}
             </h6>
           </div>
           <div className="body card p-3 border-0  ">{PageDisplay()}</div>
-          {/* <div className="footer mt-5 btn btn-group">
-        <button
-          className="btn btn-warning rounded"
-          disabled={page == 0}
-          onClick={() => {
-            setPage((currPage) => currPage - 1);
-          }}
-        >
-          Prev
-        </button>
-        <button
-          className="ms-4 btn btn-warning  rounded"
-          onClick={() => {
-            if (page === FormTitles.length - 1) {
-              alert("FORM SUBMITTED");
-              console.log(formData);
-            } else {
-              setPage((currPage) => currPage + 1);
-            }
-          }}
-        >
-          {page === FormTitles.length - 1 ? "Submit" : "Next"}
-        </button>
-      </div> */}
+
           {/* test  */}
           <div>
             <div className="my-4  btn-group btn-group-lg" role="group">
@@ -111,7 +84,7 @@ function Form() {
                 className="col btn    rounded-pill px-4"
                 style={{
                   backgroundColor: "white",
-                  color: "#ff8095",
+                  color: "#FF0099",
                   border: 0,
                 }}
                 disabled={page == 0}
@@ -125,7 +98,7 @@ function Form() {
                 className="col btn   rounded-pill  ms-2 px-4"
                 style={{
                   backgroundColor: "white",
-                  color: "#ff8095",
+                  color: "#FF0099",
                   border: 0,
                 }}
                 onClick={() => {

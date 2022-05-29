@@ -78,7 +78,7 @@ const Cart = () => {
               <div className="row my-3">
                 <div className="col-lg-7">
                   <h5 className="my-3">
-                    <Link href="/" passHref>
+                    <Link href="/productList" passHref>
                       <a className="text-body">
                         <i className="fas fa-long-arrow-alt-left me-2"></i>
                         Continue shopping
@@ -185,7 +185,7 @@ const Cart = () => {
                   <div className="d-flex justify-content-end m-4">
                     <button
                       onClick={() => emptyCart()}
-                      className="btn btn-info btn-block btn-lg"
+                      className="btn   btn-block btn-lg"
                       style={{
                         backgroundColor: "#c53b240d",
                         color: "#FF0099",
@@ -209,14 +209,19 @@ const Cart = () => {
                   </div>
                 </div>
                 <div className="col-lg-5">
-                  <div className="card bg-primary text-white rounded-3 border-0">
+                  <div
+                    className="card   text-white rounded-3 border-0"
+                    style={{
+                      backgroundColor: "#800080",
+                    }}
+                  >
                     <div className="card-body">
                       <div className="d-flex justify-content-between align-items-center mb-4">
                         <h5 className="mb-0">Card details</h5>
                         <img
                           src="/images/11.png"
                           className="img-fluid rounded-3"
-                          style={{ width: "45px" }}
+                          style={{ width: "65px" }}
                           alt="Avatar"
                         />
                       </div>
@@ -344,7 +349,12 @@ const Cart = () => {
 
                       <button
                         type="button"
-                        className="btn btn-info btn-block btn-lg"
+                        className="btn   btn-block btn-lg"
+                        style={{
+                          backgroundColor: "#ffff",
+                          color: "#FF0099",
+                          border: 0,
+                        }}
                         onClick={BuyNow}
                       >
                         <div className="d-flex justify-content-between">

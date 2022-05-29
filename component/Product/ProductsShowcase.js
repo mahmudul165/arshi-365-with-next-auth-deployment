@@ -114,29 +114,110 @@ function ProductsShowcase({ data }) {
           ))
         ) : (
           <div className="row    text-center my-2 py-3 ">
-            <div className="col-sm-12 col-md-3 ps-2  ">
-              <Skeleton height={250} />{" "}
-              <div>
-                <Skeleton height={30} /> <Skeleton height={30} />
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-3 px-3  ">
-              <Skeleton height={250} />{" "}
-              <div>
-                <Skeleton height={30} /> <Skeleton height={30} />
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-3 pe-2  ">
-              <Skeleton height={250} />{" "}
-              <div>
-                <Skeleton height={30} /> <Skeleton height={30} />
-              </div>
-            </div>
             <div className="col-sm-12 col-md-3 pe-2  ">
               <div>
-                <Skeleton height={250} />
+                <Skeleton height={250}>
+                  <div className="d-flex">
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                  </div>{" "}
+                </Skeleton>
                 <div>
-                  <Skeleton height={30} /> <Skeleton height={30} />
+                  <div className="d-flex p-2 justify-content-center align-items-center">
+                    <Skeleton height={30} width={180} />{" "}
+                  </div>
+                  <Skeleton height={30} width={250} />
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-3 pe-2  ">
+              <div>
+                <Skeleton height={250}>
+                  <div className="d-flex">
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                  </div>{" "}
+                </Skeleton>
+                <div>
+                  <div className="d-flex p-2 justify-content-center align-items-center">
+                    <Skeleton height={30} width={180} />{" "}
+                  </div>
+                  <Skeleton height={30} width={250} />
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-3 pe-2  ">
+              <div>
+                <Skeleton height={250}>
+                  <div className="d-flex">
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                  </div>{" "}
+                </Skeleton>
+                <div>
+                  <div className="d-flex p-2 justify-content-center align-items-center">
+                    <Skeleton height={30} width={180} />{" "}
+                  </div>
+                  <Skeleton height={30} width={250} />
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-3 pe-2  ">
+              <div>
+                <Skeleton height={250}>
+                  <div className="d-flex">
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                    <Skeleton
+                      height={30}
+                      width={90}
+                      borderRadius={10}
+                      highlightColor={"red"}
+                    />
+                  </div>{" "}
+                </Skeleton>
+                <div>
+                  <div className="d-flex p-2 justify-content-center align-items-center">
+                    <Skeleton height={30} width={180} />{" "}
+                  </div>
+                  <Skeleton height={30} width={250} />
                 </div>
                 <div></div>
               </div>
