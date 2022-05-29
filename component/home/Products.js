@@ -7,14 +7,6 @@ import ProductSliderHeader from "../Product/ProductSliderHeader";
 import ProductsShowcase from "../Product/ProductsShowcase";
 
 const Products = () => {
-  // store fetch data
-  // const [Products, setProducts] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("https://arshi365.lamptechs.com/api/admin/products")
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data));
-  // }, []);
   const { data, error } = useSWR(
     "https://arshi365.lamptechs.com/api/admin/products",
     { fetcher: async (url) => await axios.get(url).then((res) => res.data) }

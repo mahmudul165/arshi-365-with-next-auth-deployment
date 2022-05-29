@@ -16,6 +16,7 @@ Test.getLayout = function PageLayout(page) {
         image="test purpose"
       />
       {page}
+
       <Footer />
     </>
   );

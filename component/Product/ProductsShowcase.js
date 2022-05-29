@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
 function ProductsShowcase({ data }) {
   // Our custom easing
@@ -55,17 +56,21 @@ function ProductsShowcase({ data }) {
                   whileTap={{ scale: 0.95 }}
                   className="card border-0 "
                 >
-                  <motion.img
-                    initial={{ x: 60, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    src={product.image_one}
-                    alt="E-COMMERCE  products"
-                    className="card-img-top  p-2 "
-                    width={336}
-                    height={230}
-                    layout="responsive"
-                  />
+                  {product.image_one ? (
+                    <motion.img
+                      initial={{ x: 60, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      src={product.image_one}
+                      alt="E-COMMERCE  products"
+                      className="card-img-top  p-2 "
+                      width={336}
+                      height={230}
+                      layout="responsive"
+                    />
+                  ) : (
+                    <Skeleton height={200} />
+                  )}
 
                   {/* <Image
                     src={sunset1}

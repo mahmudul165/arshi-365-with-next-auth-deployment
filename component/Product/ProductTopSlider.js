@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 function ProductTopSlider({ slidername, SliderImage, btnname, btnaction }) {
   const [{ background }] = useSpring(
     () => ({
       from: {
-        background: "var(--from, #3B0273 )",
+        background: "var(--from, #FF0099  )",
       },
       to: {
         background: "var(--to, purple)",
       },
+
       config: config.molasses,
       loop: {
         reverse: true,
