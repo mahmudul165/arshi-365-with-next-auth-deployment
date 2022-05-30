@@ -134,12 +134,12 @@ function Signup({ providers }) {
       </p>
       {/* sign up with google and fackbook provider */}
       <>
-        <div className="d-flex justify-content-center mx-4   me-2">
+        <div className="d-flex      me-2">
           {!session ? (
             <>
-              <div className="d-flex justify-content-center w-75 p-3">
+              <div className="d-flex    ">
                 <button
-                  className="btn   btn-sm"
+                  className="btn   btn-md m-2 "
                   onClick={() =>
                     signIn("google", {
                       callbackUrl: `${window.location.origin}/`,
@@ -147,13 +147,13 @@ function Signup({ providers }) {
                   }
                 >
                   <img
-                    src="/home/facebook-icon-round.png"
+                    src="/home/facebook_long_button.png"
                     alt=""
-                    className="w-50  pe-1 me-3 "
+                    className="w-75  pe-1   "
                   ></img>
                 </button>
                 <button
-                  className="btn   btn-sm"
+                  className="btn   btn-sm m-2"
                   onClick={() =>
                     signIn("google", {
                       callbackUrl: `${window.location.origin}/`,
@@ -161,9 +161,9 @@ function Signup({ providers }) {
                   }
                 >
                   <img
-                    src="/home/google-icon-round.png"
+                    src="/home/google_long-button.png"
                     alt=""
-                    className="w-50  "
+                    className="w-75  "
                   ></img>
                 </button>
               </div>

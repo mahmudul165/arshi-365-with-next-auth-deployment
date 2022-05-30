@@ -162,7 +162,7 @@ justify-content-center m-3 p-2 gx-0  "
                 variants={stagger}
                 className="fs-4 fw-bolder mt-2 "
                 style={{
-                  color: "#ff8095",
+                  color: "#FF0099",
                   border: 0,
                 }}
               >
@@ -201,10 +201,10 @@ justify-content-center m-3 p-2 gx-0  "
                 <div className="my-2  btn-group btn-group-sm" role="group">
                   <button
                     onClick={() => addItem(data)}
-                    className="col btn btn-sm  rounded-pill p-2 me-4"
+                    className="col btn btn-sm  rounded-pill p-2 me-4 fs-6 fw-bolder"
                     style={{
                       backgroundColor: "white",
-                      color: "#ff8095",
+                      color: "#FF0099",
                       border: 0,
                     }}
                   >
@@ -214,10 +214,10 @@ justify-content-center m-3 p-2 gx-0  "
                   {/* <Link href="/payment" passHref> */}
                   <button
                     onClick={BuyNow}
-                    className="col btn btn-sm  rounded-pill  ms-2 p-2"
+                    className="col btn btn-sm  rounded-pill  ms-2 p-2 fs-6 fw-bolder"
                     style={{
                       backgroundColor: "white",
-                      color: "#ff8095",
+                      color: "#FF0099",
                       border: 0,
                     }}
                   >

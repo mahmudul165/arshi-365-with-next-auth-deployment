@@ -106,27 +106,35 @@ function Login() {
       <div className="d-flex justify-content-center mx-4   me-2">
         {!session ? (
           <>
-            <div className="d-flex justify-content-center ">
-              <img
-                src="/home/icon-facebook.png"
-                alt=""
-                className="w-25  pe-1 me-3 "
+            <div className="d-flex    ">
+              <button
+                className="btn   btn-md m-2 "
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: `${window.location.origin}${path}`,
+                    callbackUrl: `${window.location.origin}/`,
                   })
                 }
-              ></img>
-              <img
-                src="/home/icon-google.png"
-                alt=""
-                className="w-25  "
+              >
+                <img
+                  src="/home/facebook_long_button.png"
+                  alt=""
+                  className="w-75  pe-1   "
+                ></img>
+              </button>
+              <button
+                className="btn   btn-sm m-2"
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: `${window.location.origin}${path}`,
+                    callbackUrl: `${window.location.origin}/`,
                   })
                 }
-              ></img>
+              >
+                <img
+                  src="/home/google_long-button.png"
+                  alt=""
+                  className="w-75  "
+                ></img>
+              </button>
             </div>
             {/* <FontAwesomeIcon
               icon={faGoogle}
