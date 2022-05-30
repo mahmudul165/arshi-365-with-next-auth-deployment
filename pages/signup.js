@@ -137,27 +137,35 @@ function Signup({ providers }) {
         <div className="d-flex justify-content-center mx-4   me-2">
           {!session ? (
             <>
-              <div className="d-flex justify-content-center ">
-                <img
-                  src="/home/icon-facebook.png"
-                  alt=""
-                  className="w-25  pe-1 me-3 "
+              <div className="d-flex justify-content-center w-75 p-3">
+                <button
+                  className="btn   btn-sm"
                   onClick={() =>
                     signIn("google", {
                       callbackUrl: `${window.location.origin}/`,
                     })
                   }
-                ></img>
-                <img
-                  src="/home/icon-google.png"
-                  alt=""
-                  className="w-25  "
+                >
+                  <img
+                    src="/home/facebook-icon-round.png"
+                    alt=""
+                    className="w-50  pe-1 me-3 "
+                  ></img>
+                </button>
+                <button
+                  className="btn   btn-sm"
                   onClick={() =>
                     signIn("google", {
                       callbackUrl: `${window.location.origin}/`,
                     })
                   }
-                ></img>
+                >
+                  <img
+                    src="/home/google-icon-round.png"
+                    alt=""
+                    className="w-50  "
+                  ></img>
+                </button>
               </div>
               {/* <button
                 type="button"

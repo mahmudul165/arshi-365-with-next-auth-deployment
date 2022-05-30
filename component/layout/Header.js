@@ -69,10 +69,10 @@ function Header() {
 
           <Link href="/">
             <a className="navbar-brand">
-              <Image
-                src="/home/logo.png"
+              <img
+                src="/home/flipkart-plus.png"
                 alt="ECOMMERCE  LOGO"
-                width={75}
+                width={100}
                 height={75}
               />
             </a>
@@ -95,20 +95,21 @@ function Header() {
               <div className="input-group-append">
                 <Link href="/search" passHref>
                   <button
-                    className=" "
+                    className="btn   "
                     type="submit"
                     style={{
                       backgroundColor: "#c1706f",
                     }}
                   >
-                    <FontAwesomeIcon
+                    {/* <FontAwesomeIcon
                       icon={faSearch}
                       style={{
                         fontSize: 30,
                         color: "white",
                         backgroundColor: "#c1706f",
                       }}
-                    />
+                    /> */}
+                    <i className="fas fa-search"></i>
                   </button>
                 </Link>
               </div>
