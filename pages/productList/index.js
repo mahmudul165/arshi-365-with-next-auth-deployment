@@ -31,7 +31,7 @@ const Products = () => {
     { fetcher: async (url) => await axios.get(url).then((res) => res.data) }
   );
 
-  return <ProductsShowcase data={data} />;
+  return <ProductsShowcase data={data} addItem={addItem} />;
 };
 
 export default Products;

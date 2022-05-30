@@ -4,10 +4,14 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
+import useAuth from "../../hook/useAuth";
+import { useCart } from "react-use-cart";
 function ProductsShowcase({ data }) {
+  const { BuyNow } = useAuth();
+  const { addItem } = useCart();
   // Our custom easing
   let easing = [0.6, -0.05, 0.01, 0.99];
-
+  console.log("my data", data);
   // animate: defines animation
   // initial: defines initial state of animation or stating point.
   // exit: defines animation when component exits
@@ -49,13 +53,13 @@ function ProductsShowcase({ data }) {
         {data ? (
           data.map((product) => (
             <div key={product.id} className="col-sm-12 col-md-3  my-2 py-1">
-              <Link href={`productList/${product.id}`} passHref>
-                <motion.div
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="card border-0 "
-                >
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="card border-0 "
+              >
+                <Link href={`productList/${product.id}`} passHref>
                   {product.image_one ? (
                     <motion.img
                       initial={{ x: 60, opacity: 0 }}
@@ -71,8 +75,9 @@ function ProductsShowcase({ data }) {
                   ) : (
                     <Skeleton height={200} />
                   )}
+                </Link>
 
-                  {/* <Image
+                {/* <Image
                     src={sunset1}
                     alt="Sunset"
                     width={600}
@@ -82,34 +87,61 @@ function ProductsShowcase({ data }) {
                     blurDataURL="data:image/png;base64,[IMAGE_CODE_FROM_PNG_PIXEL]"
                   /> */}
 
-                  <div className="card-body">
-                    <motion.div
-                      animate={{ opacity: 1 }}
-                      initial={{ opacity: 0 }}
-                      className="title"
-                    >
-                      <h6
-                        className="card-title fs-6 fw-bolder"
-                        style={{
-                          color: "#000000",
-                          border: 0,
-                        }}
-                      >
-                        {product.name}
-                      </h6>{" "}
-                    </motion.div>
-                    <p
-                      className="text-center fs-5 fw-bolder "
+                <div className="card-body p-0">
+                  <motion.div
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    className="title"
+                  >
+                    <h6
+                      className="card-title fs-6 fw-bolder"
                       style={{
-                        color: "#FF0099",
+                        color: "#000000",
                         border: 0,
                       }}
                     >
-                      ৳ {product.price}
-                    </p>
-                  </div>
-                </motion.div>
-              </Link>
+                      {product.name}
+                    </h6>{" "}
+                  </motion.div>
+                  <small
+                    className="text-center fs-6 fw-bold  "
+                    style={{
+                      color: "#FF0099",
+                      border: 0,
+                    }}
+                  >
+                    ৳ {product.price}
+                  </small>
+                </div>
+                {/* test button */}
+                <div className="p-2 m-2 d-flex align-items-center justify-content-center">
+                  <button
+                    type="button"
+                    className="btn   btn-block btn-sm bg-light p-1 m-1 me-2  "
+                    style={{
+                      backgroundColor: "#ffff",
+                      color: "#FF0099",
+                      border: 0,
+                    }}
+                    onClick={() => addItem(product)}
+                  >
+                    <i className="fas fa-shopping-cart me-1 py-1"></i>Add To
+                    Cart
+                  </button>
+                  <button
+                    type="button"
+                    className="btn   btn-block btn-sm bg-light p-1 m-1 ms-2  "
+                    style={{
+                      backgroundColor: "#ffff",
+                      color: "#FF0099",
+                      border: 0,
+                    }}
+                    onClick={BuyNow}
+                  >
+                    <i className="fas fa-bolt me-1 py-1"></i>Buy Now
+                  </button>
+                </div>
+              </motion.div>
             </div>
           ))
         ) : (

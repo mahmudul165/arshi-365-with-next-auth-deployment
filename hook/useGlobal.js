@@ -16,7 +16,7 @@ const useGlobal = () => {
   const BuyNow = async () => {
     !session
       ? await router.push("/login", setpath(router.asPath))
-      : await router.push("/payment");
+      : await router.push("/checkout");
   };
   // search input catch
   const [searchInput, setInput] = useState("");
