@@ -247,25 +247,42 @@ function Header() {
             // end
             <>
               <div className="d-flex">
-                <Image
+                {/* <Image
                   src="/home/icon-login.png"
                   alt="Picture of the author"
                   width={20}
                   height={20}
                   className="d-inline-block align-text-top  "
-                />
+                /> */}
+                <span
+                  className="me-1"
+                  style={{
+                    color: "#fe0098",
+                  }}
+                >
+                  <i className="fs-4 fas fa-user-circle"></i>
+                </span>
+
                 <Link href="/login">
                   <a className="ms-2   text-decoration-none text-dark">LOGIN</a>
                 </Link>
               </div>
               <div className="text-center d-flex   ms-1">
-                <Image
+                {/* <Image
                   src="/home/icon-register.png"
                   alt="icon-register"
                   width={20}
                   height={20}
                   className=" ms-1"
-                />
+                /> */}
+                <span
+                  className="me-1"
+                  style={{
+                    color: "#fe0098",
+                  }}
+                >
+                  <i className="fs-4 fas fa-key"></i>
+                </span>
                 <Link href="/signup">
                   <a className="text-decoration-none text-dark ms-2">
                     REGISTER
