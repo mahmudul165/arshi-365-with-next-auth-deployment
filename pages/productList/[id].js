@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Image from "next/image";
@@ -63,100 +65,43 @@ const ProductDetails = () => {
     },
   };
   return (
-    <div className="container details">
+    <div className="container">
+      {" "}
       <div
-        className="container   row m-auto align-items-center 
-justify-content-center m-3 p-2 gx-0  "
+        className="container   row   p-2 gx-4  "
         style={{ backgroundColor: "#F2EBDD" }}
       >
         {data ? (
           <>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.4 }}
-              className="col-md-6 big-img"
-            >
-              {Object.keys(imageSlider).length === 0 ? (
-                <Image
-                  src={data.image_one}
-                  alt="product-img"
-                  height={400}
-                  width={320}
-                  layout="responsive"
-                />
-              ) : (
-                <Image
-                  src={imageSlider}
-                  alt="product-img"
-                  height={400}
-                  width={320}
-                  layout="responsive"
-                />
-              )}
+            <motion.div className="col-md-7  h-50">
+              <Carousel>
+                <div>
+                  <img src={data.image_one} />
+                </div>
+                <div>
+                  <img src={data.image_two} />
+                </div>
+                <div>
+                  <img src={data.image_three} />
+                </div>
+              </Carousel>
             </motion.div>
-            <motion.div variants={stagger} className="col-md-6 box  ">
-              {/* slider img */}
-              <motion.div variants={fadeInUp} className=" row py-2">
-                {/* <img
-                  onClick={() => handleImage(event.target.src)}
-                  src={data.image_one}
-                  className="w-25  p-2"
-                />
-                <img
-                  onClick={() => handleImage(event.target.src)}
-                  src={data.image_two}
-                  className="w-25  p-2 mx-3"
-                />
-                <img
-                  onClick={() => handleImage(event.target.src)}
-                  src={data.image_three}
-                  className="w-25  p-2"
-                /> */}
-                <div className="col-4   w-25  p-2">
-                  <Image
-                    src={data.image_one}
-                    height={50}
-                    width={32}
-                    layout="responsive"
-                    onClick={() => handleImage(data.image_one)}
-                  />
-                </div>
-                <div className="col-4  w-25 py-2 p-2  ">
-                  {" "}
-                  <Image
-                    src={data.image_two}
-                    height={50}
-                    width={32}
-                    layout="responsive"
-                    onClick={() => handleImage(data.image_two)}
-                  />
-                </div>
-                <div className="col-4  w-25  p-2 ">
-                  <Image
-                    src={data.image_three}
-                    height={50}
-                    width={32}
-                    layout="responsive"
-                    onClick={() => handleImage(data.image_three)}
-                  />
-                </div>
-              </motion.div>
-              <motion.h2
-                variants={fadeInUp}
-                className="py-2 my-2  text-uppercase"
-              >
+            <motion.div variants={stagger} className="col-md-5   mt-3 p-3">
+              <motion.h2 variants={fadeInUp} className=" my-3 text-uppercase">
                 {data.name}
               </motion.h2>
 
               {/* review section */}
-              <motion.div variants={stagger}>
+              <motion.div variants={stagger} className="py-2">
                 <StarRating />
                 <div className="fs-5 fw-bold  my-2 py-1 ">
                   <small> 3 Review</small>
                   <small className="ms-2">| Add your Review</small>
                 </div>
               </motion.div>
-              <motion.p variants={stagger}>{data.short_description}</motion.p>
+              <motion.p variants={stagger} className="mb-2 py-2">
+                {data.short_description}
+              </motion.p>
 
               <motion.p
                 variants={stagger}
@@ -172,7 +117,7 @@ justify-content-center m-3 p-2 gx-0  "
 
               <motion.div
                 variants={fadeInUp}
-                className="d-flex  align-items-center  "
+                className="d-flex  align-items-center  my-2 py-2"
               >
                 <div className="d-flex p-2">
                   <p className="fs-5 ">Size*</p>
