@@ -11,9 +11,8 @@ module.exports = {
   reactStrictMode: true,
   env: {
     GOOGLEID:
-      "15718943464-1f137o9melpvo03mevc1orf2j2gg7j1a.apps.googleusercontent.com",
-
-    GOOGLESECRET: "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",
+      "358604525603-mtn0168km0srsf13irosbk0iirkvekel.apps.googleusercontent.com",
+    GOOGLESECRET: "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",
     NEXTAUTH_URL: "http://localhost:3000",
   },
 };
