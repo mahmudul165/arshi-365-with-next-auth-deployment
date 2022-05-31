@@ -5,11 +5,11 @@ function About() {
 }
 
 export default About;
-About.getLayout = function PageLayout(page) {
-  return (
-    <>
-      <Header />
-      {page}
-    </>
-  );
-};
+// About.getLayout = function PageLayout(page) {
+//   return (
+//     <>
+//       <Header />
+//       {page}
+//     </>
+//   );
+// };
