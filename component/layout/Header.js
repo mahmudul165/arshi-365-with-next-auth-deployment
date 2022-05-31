@@ -81,40 +81,49 @@ function Header() {
           {/* search section */}
           <div className="w-50 d-flex justify-content-center align-items-center  responsive-search pe-4">
             {/* search part */}
-            <div className="input-group ">
-              <input
-                type="text"
-                className="form-control  bg-light"
-                placeholder="Search in Arshi"
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2"
-                onChange={handleSearchChange}
-              />
-              {/* search result optimized */}
 
-              <div className="input-group-append">
-                <Link href="/search" passHref>
-                  <button
-                    className="btn   "
-                    type="submit"
-                    style={{
-                      backgroundColor: "#c1706f",
-                    }}
-                  >
-                    {/* <FontAwesomeIcon
-                      icon={faSearch}
-                      style={{
-                        fontSize: 30,
-                        color: "white",
-                        backgroundColor: "#c1706f",
-                      }}
-                    /> */}
-                    <i className="fas fa-search"></i>
-                  </button>
-                </Link>
+            <div className="container">
+              {/* <button
+                className="btn  "
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-expanded="true"
+                aria-controls="multiCollapseExample1 multiCollapseExample2"
+              >
+                <i className="fa fa-search"></i>
+              </button> */}
+              <div
+                className="row height d-flex justify-content-center align-items-center"
+                id="navbarSupportedContent"
+              >
+                <div className=" ">
+                  <div className="search">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search in Arshi"
+                      onChange={handleSearchChange}
+                    />
+                    <Link href="/search" passHref>
+                      <button
+                        style={{
+                          backgroundColor: "#fe0098",
+                          color: "white",
+                        }}
+                        className="btn   "
+                        type="submit"
+                        onClick={searchInput}
+                      >
+                        <i className="fa fa-search"></i>
+                      </button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
           {/* cart part */}
           <div className="d-flex   ">
             <Image
