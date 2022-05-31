@@ -14,7 +14,7 @@ module.exports = {
       "15718943464-1f137o9melpvo03mevc1orf2j2gg7j1a.apps.googleusercontent.com",
 
     GOOGLESECRET: "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",
-    NEXT_PUBLIC_VERCEL_URL: "",
+    NEXTAUTH_URL: "http://localhost:3000",
   },
 };
 // next.config.js
