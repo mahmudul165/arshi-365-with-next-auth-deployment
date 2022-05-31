@@ -12,9 +12,10 @@ module.exports = {
 
   env: {
     GOOGLEID:
-      "358604525603-mtn0168km0srsf13irosbk0iirkvekel.apps.googleusercontent.com",
-    GOOGLESECRET: "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",
-    NEXTAUTH_URL: "http://localhost:3000",
+      "540254373517-6dridj9d5gh610stqvclfpr5qqn8nud1.apps.googleusercontent.com",
+    GOOGLESECRET: "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",
+    NEXTAUTH_URL:
+      "https://shooping-commerce-arshi-365-deploy-project.vercel.app",
   },
 };
 // next.config.js
