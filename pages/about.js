@@ -9,7 +9,6 @@ About.getLayout = function PageLayout(page) {
   return (
     <>
       <Header />
-
       {page}
     </>
   );
