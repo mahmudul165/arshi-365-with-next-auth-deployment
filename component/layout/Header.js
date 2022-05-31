@@ -307,9 +307,10 @@ function Header() {
         >
           <FontAwesomeIcon
             icon={faRectangleList}
+            className="me-1"
             style={{
               fontSize: 48,
-              color: "#c1706f",
+              color: "#fe0098",
             }}
           />
         </button>
