@@ -70,9 +70,9 @@ function Header() {
           <Link href="/">
             <a className="navbar-brand">
               <img
-                src="/home/flipkart-plus.png"
+                src="/home/Arshi365 New-01.png"
                 alt="ECOMMERCE  LOGO"
-                width={100}
+                width={150}
                 height={75}
               />
             </a>
@@ -126,13 +126,22 @@ function Header() {
 
           {/* cart part */}
           <div className="d-flex   ">
-            <Image
+            {/* <Image
               src="/home/cart-logo.png"
               alt="CART-LOGO"
               width={55}
               height={52}
               className="d-inline-block align-text-top  "
-            />
+            /> */}
+
+            <span
+              className="me-1"
+              style={{
+                color: "#fe0098",
+              }}
+            >
+              <i className="fas fa-shopping-cart fs-4"></i>
+            </span>
             <Link href="/cart" passHref>
               <a className="ms-1  text-decoration-none text-dark">
                 MY CART ({totalItems})
@@ -246,7 +255,7 @@ function Header() {
                   className="d-inline-block align-text-top  "
                 />
                 <Link href="/login">
-                  <a className="ms-1   text-decoration-none text-dark">LOGIN</a>
+                  <a className="ms-2   text-decoration-none text-dark">LOGIN</a>
                 </Link>
               </div>
               <div className="text-center d-flex   ms-1">
@@ -258,7 +267,9 @@ function Header() {
                   className=" ms-1"
                 />
                 <Link href="/signup">
-                  <a className="text-decoration-none text-dark">REGISTER</a>
+                  <a className="text-decoration-none text-dark ms-2">
+                    REGISTER
+                  </a>
                 </Link>
               </div>
             </>

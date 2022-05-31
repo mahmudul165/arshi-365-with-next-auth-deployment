@@ -12,9 +12,9 @@ function Footer() {
             <Link href="/">
               <a className="navbar-brand">
                 <Image
-                  src="/home/logo.png"
+                  src="/home/Arshi365 New-01.png"
                   alt="Picture LOGO"
-                  width={75}
+                  width={150}
                   height={75}
                   className="logo "
                 />

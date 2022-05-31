@@ -14,12 +14,16 @@ function Reviews() {
             {tabs.map((item) => (
               <li
                 key={item.label}
-                className="nav-link"
+                className="nav-link  "
+                style={{
+                  color: "#FF0099",
+                  border: 0,
+                }}
                 onClick={() => setSelectedTab(item)}
               >
                 {` ${item.label}`}
                 {item === selectedTab ? (
-                  <motion.div className="underline" layoutId="underline" />
+                  <motion.div className="underline   " layoutId="underline" />
                 ) : null}
               </li>
             ))}
@@ -29,14 +33,16 @@ function Reviews() {
       <main>
         <AnimatePresence exitBeforeEnter>
           <motion.div
-            className="card"
+            className="card my-3 py-3"
             key={selectedTab ? selectedTab.label : "empty"}
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.15 }}
           >
-            {selectedTab ? selectedTab.para : "😋"}
+            <div className=" my-3 p-3">
+              {selectedTab ? selectedTab.para : "😋"}
+            </div>
           </motion.div>
         </AnimatePresence>
       </main>

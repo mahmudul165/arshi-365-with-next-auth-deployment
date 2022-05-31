@@ -4,7 +4,7 @@ import ReactStars from "react-rating-stars-component";
 
 const StarRating = () => {
   const StarRating = {
-    size: 20,
+    size: 15,
     count: 5,
     color: "black",
     activeColor: "goldenrod",

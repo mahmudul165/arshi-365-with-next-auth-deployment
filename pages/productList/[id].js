@@ -15,6 +15,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import useAuth from "../../hook/useAuth";
 import { useCart } from "react-use-cart";
 import { motion } from "framer-motion";
+import Reviews from "../../component/productsreview/Reviews";
 const ProductDetails = () => {
   const { addItem } = useCart();
   const { BuyNow } = useAuth();
@@ -73,7 +74,7 @@ const ProductDetails = () => {
       >
         {data ? (
           <>
-            <motion.div className="col-md-7  h-50">
+            <motion.div className="col-md-6  h-50">
               <Carousel>
                 <div>
                   <img src={data.image_one} />
@@ -86,7 +87,7 @@ const ProductDetails = () => {
                 </div>
               </Carousel>
             </motion.div>
-            <motion.div variants={stagger} className="col-md-5   mt-3 p-3">
+            <motion.div variants={stagger} className="col-md-6   mt-3 p-3">
               <motion.h2 variants={fadeInUp} className=" my-3 text-uppercase">
                 {data.name}
               </motion.h2>
@@ -94,7 +95,7 @@ const ProductDetails = () => {
               {/* review section */}
               <motion.div variants={stagger} className="py-2">
                 <StarRating />
-                <div className="fs-5 fw-bold  my-2 py-1 ">
+                <div className="fs-6 fw-bold  my-2 py-1 ">
                   <small> 3 Review</small>
                   <small className="ms-2">| Add your Review</small>
                 </div>
@@ -111,7 +112,7 @@ const ProductDetails = () => {
                   border: 0,
                 }}
               >
-                <span className="fs-4 fw-bolder  mt-2 "> ৳</span>{" "}
+                <span className="fs-5 fw-bolder  mt-2 "> ৳</span>{" "}
                 {data.price || <Skeleton />}
               </motion.p>
 
@@ -120,7 +121,7 @@ const ProductDetails = () => {
                 className="d-flex  align-items-center  my-2 py-2"
               >
                 <div className="d-flex p-2">
-                  <p className="fs-5 ">Size*</p>
+                  <small className="fs-6 ">Size*</small>
 
                   <select
                     className="form-select  mx-2"
@@ -133,7 +134,7 @@ const ProductDetails = () => {
                     <option value="5">XXL</option>
                   </select>
                 </div>
-                <p className="fs-5   mt-2 ">
+                <p className="fs-6   mt-2 ">
                   Status: <span className="text-warning">In stock</span>
                 </p>
               </motion.div>
@@ -146,7 +147,7 @@ const ProductDetails = () => {
                 <div className="my-2  btn-group btn-group-sm" role="group">
                   <button
                     onClick={() => addItem(data)}
-                    className="col btn btn-sm  rounded-pill p-2 me-4 fs-6 fw-bolder"
+                    className="col btn btn-sm  rounded-pill p-2  me-4 fs-6 fw-bolder"
                     style={{
                       backgroundColor: "white",
                       color: "#FF0099",
@@ -159,7 +160,7 @@ const ProductDetails = () => {
                   {/* <Link href="/payment" passHref> */}
                   <button
                     onClick={BuyNow}
-                    className="col btn btn-sm  rounded-pill  ms-2 p-2 fs-6 fw-bolder"
+                    className="col btn btn-sm  p-2 rounded-pill  ms-2 p-2 fs-6 fw-bolder"
                     style={{
                       backgroundColor: "white",
                       color: "#FF0099",
@@ -172,6 +173,8 @@ const ProductDetails = () => {
                 </div>
               </motion.div>
             </motion.div>
+            {/* reviews */}
+            <Reviews />
           </>
         ) : (
           <div className="row    p-2 justfy-content-center p-3  m-3">
