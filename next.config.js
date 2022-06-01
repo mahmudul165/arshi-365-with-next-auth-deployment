@@ -12,23 +12,8 @@ module.exports = {
 
   env: {
     GOOGLEID:
-      "540254373517-6dridj9d5gh610stqvclfpr5qqn8nud1.apps.googleusercontent.com",
-    GOOGLESECRET: "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",
-    NEXTAUTH_URL:
-      "https://shooping-commerce-arshi-365-deploy-project.vercel.app",
+      "648381922000-0aihspods9aqsr1djhns0hm3rpt7vva1.apps.googleusercontent.com",
+    GOOGLESECRET: "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",
+    NEXTAUTH_URL: "http://localhost:3000",
   },
 };
-// next.config.js
-// project Name
-// Only letters, digits, and underscores
-// arshi-365-pages-nextauth-deploy-project
-// https://arshi-365-pages-nextauth-deploy-project.vercel.app/api/auth/callback/google
-
-//  NEXTAUTH_URL: "http://localhost:3000",
-
-// GOOGLEID:
-//       "15718943464-1f137o9melpvo03mevc1orf2j2gg7j1a.apps.googleusercontent.com",
-
-//     GOOGLESECRET: "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",
-//     358604525603-mtn0168km0srsf13irosbk0iirkvekel.apps.googleusercontent.com
-//  1019720719307-lpi7ioqh7uhp6462chdfdghpan6k8kf5.apps.googleusercontent.com
