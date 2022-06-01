@@ -35,5 +35,5 @@ export default NextAuth({
     //   from: "NextAuth.js <no-reply@example.com>",
     // }),
   ],
-  secret: "abcdefgh",
+  secret: process.env.NEXTAUTH_SECRET,
 });
