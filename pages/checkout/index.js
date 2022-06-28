@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useCart } from "react-use-cart";
-
 import { useSession, getProviders, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import useAuth from "../../hook/useAuth";
@@ -232,7 +231,7 @@ const Cart = () => {
                                 className="form-control coupon form-control-md text-wrap"
                                 style={{ height: "100px" }}
                               />
-                              <button
+                              {/* <button
                                 className="btn  bg-white btn-block btn-md ms-2"
                                 style={{
                                   backgroundColor: "#c53b240d",
@@ -241,7 +240,7 @@ const Cart = () => {
                                 }}
                               >
                                 Edit
-                              </button>
+                              </button> */}
                             </div>
                           </div>
 
@@ -254,7 +253,7 @@ const Cart = () => {
                                 placeholder="phone number"
                               />
 
-                              <button
+                              {/* <button
                                 className="btn  bg-white btn-block btn-md ms-2"
                                 style={{
                                   backgroundColor: "#c53b240d",
@@ -263,7 +262,7 @@ const Cart = () => {
                                 }}
                               >
                                 Edit
-                              </button>
+                              </button> */}
                             </div>
                           </div>
                           <div className="mb-5">
@@ -275,7 +274,7 @@ const Cart = () => {
                                 placeholder="Email Address"
                               />
 
-                              <button
+                              {/* <button
                                 className="btn  bg-white btn-block btn-md ms-2"
                                 style={{
                                   backgroundColor: "#c53b240d",
@@ -284,7 +283,7 @@ const Cart = () => {
                                 }}
                               >
                                 Edit
-                              </button>
+                              </button> */}
                             </div>
                           </div>
                         </form>

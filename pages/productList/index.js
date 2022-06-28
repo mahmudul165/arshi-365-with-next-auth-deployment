@@ -1,18 +1,3 @@
-// import React from "react";
-// import HorizontalGallery from "react-dynamic-carousel";
-// import Carousel from "/component/home/Carousel";
-
-// function index() {
-//   return (
-//     <div className="container">
-//       <Carousel />
-
-//     </div>
-//   );
-// }
-
-// export default index;
-
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Image from "next/image";
