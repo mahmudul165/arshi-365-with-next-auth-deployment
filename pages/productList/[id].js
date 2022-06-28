@@ -5,17 +5,61 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
-import StarRating from "../../component/StarRating";
-import IncrementDecrement from "../../component/IncrementDecrement";
-import SignIn from "/public/home/Sign-in.png";
-import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import useAuth from "../../hook/useAuth";
 import { useCart } from "react-use-cart";
 import { motion } from "framer-motion";
-import Reviews from "../../component/productsreview/Reviews";
+
+import dynamic from "next/dynamic";
+const Reviews = dynamic(() => import("/component/productsreview/Reviews"), {
+  loading: () => <p>Loading...</p>,
+});
+const StarRating = dynamic(() => import("/component/StarRating"), {
+  loading: () => <p>Loading...</p>,
+});
+const IncrementDecrement = dynamic(
+  () => import("/component/IncrementDecrement"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+import SignIn from "/public/home/Sign-in.png";
+import { useSession, signIn, signOut } from "next-auth/react";
+//import Reviews from "../../component/productsreview/Reviews";
+//import StarRating from "../../component/StarRating";
+//import IncrementDecrement from "../../component/IncrementDecrement";
+
+// export const getStaticPaths = async () => {
+//   const res = await fetch("https://arshi365.lamptechs.com/api/admin/products");
+//   const data = await res.json();
+//   const paths = await data.map((post) => {
+//     return {
+//       params: { id: post?.id.toString() },
+//     };
+//   });
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+// export const getStaticProps = async ({ params }) => {
+//   const res = await fetch(
+//     `https://arshi365.lamptechs.com/api/admin/products/${params.id}`
+//   );
+//   // console.log(res);
+//   const data = await res.json();
+//   console.log("product data is :", data);
+
+//   return {
+//     props: { data },
+//   };
+//   revalidate: 3;
+// };
+
 const ProductDetails = () => {
   const { addItem } = useCart();
   const { BuyNow } = useAuth();
@@ -29,7 +73,7 @@ const ProductDetails = () => {
     { fetcher: async (url) => await axios.get(url).then((res) => res.data) }
   );
 
-  console.log("my object data is", data);
+  // console.log("my object data is", data);
   const { data: session } = useSession();
 
   const handleImage = (img) => {

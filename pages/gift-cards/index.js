@@ -18,9 +18,19 @@
 // export default GiftCards;
 import React from "react";
 import useSWR from "swr";
-import ProductsShowcase from "../../component/Product/ProductsShowcase";
-import ProductTopSlider from "../../component/Product/ProductTopSlider";
-
+import dynamic from "next/dynamic";
+const ProductsShowcase = dynamic(
+  () => import("/component/Product/ProductsShowcase"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+const ProductTopSlider = dynamic(
+  () => import("/component/Product/ProductTopSlider"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
 import SliderImage from "/public/videos/homeslider.gif";
 function TodayDeals() {
   const { data, error } = useSWR(

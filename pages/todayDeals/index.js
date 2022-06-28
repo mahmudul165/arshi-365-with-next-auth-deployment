@@ -14,13 +14,23 @@ const ProductTopSlider = dynamic(
   }
 );
 import SliderImage from "/public/videos/homeslider.gif";
-function TodayDeals() {
-  const { data, error } = useSWR(
-    "https://arshi365.lamptechs.com/api/admin/todaysDeal",
-    { fetcher: async (url) => await fetch(url).then((res) => res.json()) }
-  );
 
-  console.log("todaydeal", data);
+export const getStaticProps = async () => {
+  const res = await fetch(
+    "https://arshi365.lamptechs.com/api/admin/todaysDeal"
+  );
+  const data = await res.json();
+  return { props: { data } };
+  revalidate: 3;
+};
+
+function TodayDeals({ data }) {
+  // const { data, error } = useSWR(
+  //   "https://arshi365.lamptechs.com/api/admin/todaysDeal",
+  //   { fetcher: async (url) => await fetch(url).then((res) => res.json()) }
+  // );
+
+  // console.log("todaydeal", data);
   return (
     <>
       <ProductTopSlider

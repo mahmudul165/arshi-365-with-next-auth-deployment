@@ -19,9 +19,24 @@
 
 import React from "react";
 import useSWR from "swr";
-import ProductsShowcase from "../../component/Product/ProductsShowcase";
-import ProductTopSlider from "../../component/Product/ProductTopSlider";
+//import ProductsShowcase from "../../component/Product/ProductsShowcase";
+//import ProductTopSlider from "../../component/Product/ProductTopSlider";
 import SliderImage from "/public/videos/lifestyleslider.gif";
+
+import dynamic from "next/dynamic";
+const ProductsShowcase = dynamic(
+  () => import("../../component/Product/ProductsShowcase"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+const ProductTopSlider = dynamic(
+  () => import("/component/Product/ProductTopSlider"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
 function TodayDeals() {
   const { data, error } = useSWR(
     "https://arshi365.lamptechs.com/api/admin/todaysDeal",
